@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/30 16:48:17 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:29:06 by npineau          ###   ########.fr       */
+/*   Updated: 2013/12/17 12:27:19 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 # include "libft.h"
@@ -21,6 +21,7 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*new;
 
+	new = NULL;
 	if (lst)
 	{
 		new = ft_lstnew((f(lst))->content, lst->content_size);
