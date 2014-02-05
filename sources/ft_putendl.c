@@ -6,12 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 11:40:15 by npineau           #+#    #+#             */
-/*   Updated: 2013/11/30 19:36:37 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:03:47 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBFT_H
-# include "libft.h"
-#endif
+
+#include "libft.h"
 
 void	ft_putendl(const char *str)
 {

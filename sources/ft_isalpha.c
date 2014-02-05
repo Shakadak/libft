@@ -6,9 +6,10 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 15:54:06 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:19:56 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 11:59:19 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 static int	ft_isupper(int c);
 static int	ft_islower(int c);
 

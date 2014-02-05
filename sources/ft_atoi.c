@@ -6,9 +6,10 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:53:31 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/04 19:01:35 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 11:58:53 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 static int	ft_isspace(char c);
 
 int			ft_atoi(const char *src)

@@ -6,9 +6,10 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 11:43:05 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:28:04 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 11:59:50 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 # include "libft.h"
 
 static char	*ft_initiate(int n);

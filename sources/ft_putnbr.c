@@ -6,10 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 16:05:37 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 18:19:28 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:04:09 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-# include "libft.h"
+
+#include "libft.h"
 
 void	ft_putnbr(int n)
 {

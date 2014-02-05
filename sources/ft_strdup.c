@@ -6,14 +6,12 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 12:42:20 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:40:11 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:05:37 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-# include "libft.h"
-#ifndef STDLIB_H
-# define STDLIB_H
-# include <stdlib.h>
-#endif
+
+#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *src)
 {

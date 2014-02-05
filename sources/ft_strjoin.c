@@ -6,10 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 15:03:39 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/07 14:41:16 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:06:13 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-# include "libft.h"
+
+#include "libft.h"
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {

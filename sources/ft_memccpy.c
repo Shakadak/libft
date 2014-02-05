@@ -6,13 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 15:06:02 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:31:40 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:01:56 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef STRING_H
-# define STRING_H
-# include <string.h>
-#endif
+
+#include <string.h>
 
 void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {

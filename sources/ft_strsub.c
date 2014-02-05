@@ -6,10 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 14:28:03 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:47:28 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:08:37 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-# include "libft.h"
+
+#include "libft.h"
 
 char	*ft_strsub(const char *src, unsigned int start, size_t n)
 {

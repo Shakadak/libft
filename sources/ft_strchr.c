@@ -6,10 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 11:42:56 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:37:11 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:04:54 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-# include "libft.h"
+
+#include "libft.h"
 
 char	*ft_strchr(const char *src, int c)
 {

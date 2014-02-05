@@ -6,10 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 16:49:27 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 18:19:00 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:03:02 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-# include "libft.h"
+
+#include "libft.h"
 
 void	*ft_memmove(void *s1, const void *s2, size_t n)
 {

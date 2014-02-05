@@ -6,9 +6,10 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 11:06:03 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:41:08 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:06:07 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	int	i;

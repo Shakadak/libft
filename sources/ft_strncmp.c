@@ -6,13 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 18:51:29 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:42:32 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:07:06 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef STRING_H
-# define STRING_H
-# include <string.h>
-#endif
+
+#include <string.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

@@ -6,10 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 12:44:31 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:41:45 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:06:42 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-# include "libft.h"
+
+#include "libft.h"
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {

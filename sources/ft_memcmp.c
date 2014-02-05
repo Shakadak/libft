@@ -6,13 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 11:29:21 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:33:13 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:02:22 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef STRING_H
-# define STRING_H
-# include <string.h>
-#endif
+
+#include <string.h>
 
 int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {

@@ -6,17 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/26 11:53:51 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/04 19:04:36 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:02:52 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef STDLIB_H
-# define STDLIB_H
-# include <stdlib.h>
-#endif
-#ifndef STRING_H
-# define STRING_H
-# include <string.h>
-#endif
+
+#include <stdlib.h>
 
 void	ft_memdel(void **ap)
 {

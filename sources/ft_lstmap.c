@@ -6,14 +6,12 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/30 16:48:17 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/17 12:27:19 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:00:49 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-# include "libft.h"
-#ifndef STDLIB_H
-# define STDLIB_H
-# include <stdlib.h>
-#endif
+
+#include <stdlib.h>
+#include "libft.h"
 
 static void	ft_elemdel(void *content, size_t size);
 

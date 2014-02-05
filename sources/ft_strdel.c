@@ -6,10 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/26 13:09:20 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:39:58 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:05:19 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-# include "libft.h"
+
+#include "libft.h"
 
 void	ft_strdel(char **as)
 {

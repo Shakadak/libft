@@ -6,19 +6,17 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 11:59:23 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:46:55 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:08:19 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-# include "libft.h"
-#ifndef STDLIB_H
-# define STDLIB_H
-# include <stdlib.h>
-#endif
+
+#include <stdlib.h>
+#include "libft.h"
 
 static int	ft_modlen(const char *s, char c);
 static int	ft_todo(const char *s, char c);
 
-char			**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -46,7 +44,7 @@ char			**ft_strsplit(char const *s, char c)
 	return (tab);
 }
 
-static int		ft_todo(const char *s, char c)
+static int	ft_todo(const char *s, char c)
 {
 	int	i;
 	int	cp;
@@ -67,7 +65,7 @@ static int		ft_todo(const char *s, char c)
 	return (cp);
 }
 
-static int		ft_modlen(const char *s, char c)
+static int	ft_modlen(const char *s, char c)
 {
 	int	i;
 

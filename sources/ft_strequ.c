@@ -6,10 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 14:00:02 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:40:34 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:05:44 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-# include "libft.h"
+
+#include "libft.h"
 
 int	ft_strequ(const char *s1, const char *s2)
 {

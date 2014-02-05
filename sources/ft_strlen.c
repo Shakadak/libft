@@ -6,13 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 12:29:05 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/17 12:26:19 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:06:32 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef STRING_H
-# define STRING_H
-# include <string.h>
-#endif
+
+#include <string.h>
 
 size_t	ft_strlen(const char *str)
 {

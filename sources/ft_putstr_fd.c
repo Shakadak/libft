@@ -6,13 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 16:08:30 by npineau           #+#    #+#             */
-/*   Updated: 2013/11/30 19:40:36 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:04:41 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef UNISTD_H
-# define UNISTD_H
-# include <unistd.h>
-#endif
+
+#include <unistd.h>
 
 void	ft_putstr_fd(char const *s, int fd)
 {

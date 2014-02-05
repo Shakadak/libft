@@ -6,13 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 15:09:44 by npineau           #+#    #+#             */
-/*   Updated: 2013/11/30 19:50:21 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:07:20 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef STRING_H
-# define STRING_H
-# include <string.h>
-#endif
+
+#include <string.h>
 
 char	*ft_strncpy(char *copy, const char *src, size_t n)
 {

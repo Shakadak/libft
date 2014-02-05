@@ -6,9 +6,10 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/26 20:44:10 by npineau           #+#    #+#             */
-/*   Updated: 2013/12/06 17:40:46 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:06:02 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 void	ft_striter(char *s, void (*f)(char *))
 {
 	int	i;

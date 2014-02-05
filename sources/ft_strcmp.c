@@ -6,9 +6,10 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 18:17:25 by npineau           #+#    #+#             */
-/*   Updated: 2013/11/30 19:42:39 by npineau          ###   ########.fr       */
+/*   Updated: 2014/02/05 12:05:09 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	int	i;
