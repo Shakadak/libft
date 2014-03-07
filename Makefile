@@ -6,7 +6,7 @@
 #    By: npineau <npineau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 12:15:41 by npineau           #+#    #+#              #
-#    Updated: 2014/03/07 18:47:50 by npineau          ###   ########.fr        #
+#    Updated: 2014/03/07 18:55:48 by npineau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,15 +105,15 @@ INC			:=	$(DIRINC)/libft.h
 
 ### ARCHIVE ###
 
-AR			=	ar
-AR_FLAG		=	-crus
+AR			:=	ar
+AR_FLAG		:=	-crus
 AR_EXEC		=	$(AR) $(AR_FLAG) $@ $^
 
 ### COMPILATION ###
 
-CC			=	gcc
-C_FLAG		=	-Wall -Wextra -Werror
-O_FLAG		=	-O3
+CC			:=	gcc
+C_FLAG		:=	-Wall -Wextra -Werror
+O_FLAG		:=	-O3
 C_OPT		=	-o $@ -c $< -I $(DIRINC)
 COMPIL		=	$(CC) $(C_FLAG) $(O_FLAG) $(C_OPT)
 
