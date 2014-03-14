@@ -12,10 +12,9 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# ifndef STRING_H
-#  define STRING_H
-#  include <string.h>
-# endif
+# include <string.h>
+
+# define BUFF_SIZE 32
 
 typedef struct		s_list
 {
@@ -70,6 +69,7 @@ char	*ft_strsub(const char *src, unsigned int start, size_t n);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(const char *src);
 char	**ft_strsplit(char const *s, char c);
+int		get_next_line(int fd, char **src);
 
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);

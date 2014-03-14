@@ -88,7 +88,8 @@ STR			:=	ft_strcat.c \
 				ft_strsplit.c \
 				ft_strstr.c \
 				ft_strsub.c \
-				ft_strtrim.c
+				ft_strtrim.c \
+				get_next_line.c
 
 ### FILES: OBJECTS ###
 
