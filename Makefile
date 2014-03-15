@@ -113,7 +113,7 @@ AR_EXEC		=	$(AR) $(AR_FLAG) $@ $^
 ### COMPILATION ###
 
 CC			:=	gcc
-C_FLAG		:=	-Wall -Wextra -Werror
+C_FLAG		:=	-Wall -Wextra# -Werror
 O_FLAG		:=	-O3
 C_OPT		=	-o $@ -c $< -I $(DIRINC)
 COMPIL		=	$(CC) $(C_FLAG) $(O_FLAG) $(C_OPT)
