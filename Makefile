@@ -6,7 +6,7 @@
 #    By: npineau <npineau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 12:15:41 by npineau           #+#    #+#              #
-#    Updated: 2014/03/07 18:55:48 by npineau          ###   ########.fr        #
+#    Updated: 2014/03/18 13:10:49 by npineau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ CHAR		:=	ft_atoi.c \
 				ft_isascii.c \
 				ft_isdigit.c \
 				ft_isprint.c \
+				ft_isspace.c \
 				ft_itoa.c \
 				ft_tolower.c \
 				ft_toupper.c
@@ -113,7 +114,7 @@ AR_EXEC		=	$(AR) $(AR_FLAG) $@ $^
 ### COMPILATION ###
 
 CC			:=	gcc
-C_FLAG		:=	-Wall -Wextra# -Werror
+C_FLAG		:=	-Wall -Wextra -Werror
 O_FLAG		:=	-O3
 C_OPT		=	-o $@ -c $< -I $(DIRINC)
 COMPIL		=	$(CC) $(C_FLAG) $(O_FLAG) $(C_OPT)
