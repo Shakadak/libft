@@ -18,7 +18,7 @@ char	*ft_strsub(const char *src, unsigned int start, size_t n)
 
 	new = ft_strnew(n + 1);
 	if (!src || !new)
-		return (NULL);
+		return (new);
 	new = ft_strncpy(new, &src[start], n);
 	return (new);
 }
