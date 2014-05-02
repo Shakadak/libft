@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 15:03:39 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/02 15:43:42 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/02 15:45:52 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	if (len)
 		ft_strcpy(new, s1);
 	if (len2)
-		ft_strcpy(&new[len], s2);
+		ft_strcpy(new + len, s2);
 	return (new);
 }
