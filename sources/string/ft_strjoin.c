@@ -19,7 +19,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	int		len2;
 
 	len = ft_strlen(s1);
-	len = ft_strlen(s2);
+	len2 = ft_strlen(s2);
 	new = ft_strnew(len + len2);
 	if (!new)
 		return (NULL);
