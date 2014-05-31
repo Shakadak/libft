@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 11:00:59 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/29 15:18:34 by npineau          ###   ########.fr       */
+/*   Updated: 2014/05/31 14:05:24 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void				*ft_memset(void *dest, int c, size_t length);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 
+int					ft_isx(char *str, int (*is)(int));
 char				*ft_strchr(const char *src, int c);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);

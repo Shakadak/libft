@@ -6,7 +6,7 @@
 #    By: npineau <npineau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 12:15:41 by npineau           #+#    #+#              #
-#    Updated: 2014/05/23 12:23:46 by npineau          ###   ########.fr        #
+#    Updated: 2014/05/31 14:04:48 by npineau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,6 +91,7 @@ STR			:=	ft_strcat.c \
 				ft_strstr.c \
 				ft_strsub.c \
 				ft_strtrim.c \
+				ft_isx.c \
 				get_next_line.c
 
 ### FILES: OBJECTS ###
