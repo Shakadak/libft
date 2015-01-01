@@ -16,10 +16,10 @@ NAME		:=	libft.a
 
 DIRSRC		:=	sources
 DIROBJ		:=	objects
-DIRCHAR		:=	$(DIRSRC)/char
+DIRCHR		:=	$(DIRSRC)/char
 DIRLST		:=	$(DIRSRC)/list
 DIRMEM		:=	$(DIRSRC)/memory
-DIRPUT		:=	$(DIRSRC)/output
+DIRIO		:=	$(DIRSRC)/io
 DIRSTR		:=	$(DIRSRC)/string
 DIRINC		:=	includes
 
@@ -27,79 +27,18 @@ DIRINC		:=	includes
 
 ### FILES: SOURCES ###
 
-CHAR		:=	ft_atoi.c \
-				ft_isalnum.c \
-				ft_isalpha.c \
-				ft_isascii.c \
-				ft_isdigit.c \
-				ft_isprint.c \
-				ft_isspace.c \
-				ft_itoa.c \
-				ft_tolower.c \
-				ft_toupper.c
-
-LST			:=	ft_lstadd.c \
-				ft_lstdel.c \
-				ft_lstdelone.c \
-				ft_lstiter.c \
-				ft_lstmap.c \
-				ft_lstnew.c
-
-MEM			:=	ft_array_free.c \
-				ft_bzero.c \
-				ft_memalloc.c \
-				ft_memccpy.c \
-				ft_memchr.c \
-				ft_memcmp.c \
-				ft_memcpy.c \
-				ft_memdel.c \
-				ft_memmove.c \
-				ft_memset.c
-
-PUT			:=	ft_putchar.c \
-				ft_putchar_fd.c \
-				ft_putendl.c \
-				ft_putendl_fd.c \
-				ft_putnbr.c \
-				ft_putnbr_fd.c \
-				ft_putstr.c \
-				ft_putstr_fd.c
-
-STR			:=	ft_strcat.c \
-				ft_strchr.c \
-				ft_strclr.c \
-				ft_strcmp.c \
-				ft_strcpy.c \
-				ft_strdel.c \
-				ft_strdup.c \
-				ft_strequ.c \
-				ft_striter.c \
-				ft_striteri.c \
-				ft_strjoin.c \
-				ft_strlcat.c \
-				ft_strlen.c \
-				ft_strmap.c \
-				ft_strmapi.c \
-				ft_strncat.c \
-				ft_strncmp.c \
-				ft_strncpy.c \
-				ft_strnequ.c \
-				ft_strnew.c \
-				ft_strnstr.c \
-				ft_strrchr.c \
-				ft_strsplit.c \
-				ft_strstr.c \
-				ft_strsub.c \
-				ft_strtrim.c \
-				ft_isx.c \
-				get_next_line.c
+include $(DIRCHR)/sources.mk
+include $(DIRLST)/sources.mk
+include $(DIRMEM)/sources.mk
+include $(DIRIO)/sources.mk
+include $(DIRSTR)/sources.mk
 
 ### FILES: OBJECTS ###
 
-OBJ			:=	$(CHAR:.c=.o) \
+OBJ			:=	$(CHR:.c=.o) \
 				$(LST:.c=.o) \
 				$(MEM:.c=.o) \
-				$(PUT:.c=.o) \
+				$(IO:.c=.o) \
 				$(STR:.c=.o)
 
 ### FILES: PATHS ###
@@ -115,7 +54,7 @@ AR_EXEC		=	$(AR) $(AR_FLAG) $@ $^
 
 ### COMPILATION ###
 
-CC			:=	llvm-gcc
+CC			:=	clang
 C_FLAG		:=	-Wall -Wextra -Werror
 O_FLAG		:=	-O3
 C_OPT		=	-o $@ -c $< -I $(DIRINC)
@@ -127,7 +66,7 @@ all: $(NAME)
 
 ### RULES: COMPILATION ###
 
-$(DIROBJ)/%.o: $(DIRCHAR)/%.c $(INC)
+$(DIROBJ)/%.o: $(DIRCHR)/%.c $(INC)
 	$(COMPIL)
 
 $(DIROBJ)/%.o: $(DIRLST)/%.c $(INC)
@@ -136,7 +75,7 @@ $(DIROBJ)/%.o: $(DIRLST)/%.c $(INC)
 $(DIROBJ)/%.o: $(DIRMEM)/%.c $(INC)
 	$(COMPIL)
 
-$(DIROBJ)/%.o: $(DIRPUT)/%.c $(INC)
+$(DIROBJ)/%.o: $(DIRIO)/%.c $(INC)
 	$(COMPIL)
 
 $(DIROBJ)/%.o: $(DIRSTR)/%.c $(INC)
