@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 15:06:02 by npineau           #+#    #+#             */
-/*   Updated: 2015/01/15 12:04:29 by npineau          ###   ########.fr       */
+/*   Updated: 2015/01/19 17:35:14 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {
-	size_t		i;
-	char		*dst;
+	size_t				i;
+	char				*dst;
 	const unsigned char	*src;
 
 	dst = s1;
