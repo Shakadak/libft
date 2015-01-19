@@ -8,3 +8,6 @@ CHR	:= ft_atoi.c \
 	ft_itoa.c \
 	ft_tolower.c \
 	ft_toupper.c
+
+$(DIROBJ)/%.o: $(DIRCHR)/%.c $(INC)
+	$(COMPIL)

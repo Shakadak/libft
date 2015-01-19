@@ -8,3 +8,6 @@ MEM := ft_array_free.c \
 	ft_memdel.c \
 	ft_memmove.c \
 	ft_memset.c
+
+$(DIROBJ)/%.o: $(DIRMEM)/%.c $(INC)
+	$(COMPIL)

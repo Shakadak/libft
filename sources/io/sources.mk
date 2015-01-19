@@ -7,3 +7,6 @@ IO	:=	ft_putchar.c \
 	ft_putstr.c \
 	ft_putstr_fd.c \
 	get_next_line.c
+
+$(DIROBJ)/%.o: $(DIRIO)/%.c $(INC)
+	$(COMPIL)

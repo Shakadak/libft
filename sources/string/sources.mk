@@ -25,3 +25,6 @@ STR	:=	ft_isx.c \
 	ft_strstr.c \
 	ft_strsub.c \
 	ft_strtrim.c
+
+$(DIROBJ)/%.o: $(DIRSTR)/%.c $(INC)
+	$(COMPIL)

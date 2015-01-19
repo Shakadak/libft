@@ -4,3 +4,6 @@ LST	:= ft_lstadd.c \
 	ft_lstiter.c \
 	ft_lstmap.c \
 	ft_lstnew.c
+
+$(DIROBJ)/%.o: $(DIRLST)/%.c $(INC)
+	$(COMPIL)

@@ -6,7 +6,7 @@
 #    By: npineau <npineau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 12:15:41 by npineau           #+#    #+#              #
-#    Updated: 2014/05/31 14:04:48 by npineau          ###   ########.fr        #
+#    Updated: 2015/01/19 15:12:38 by npineau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,23 +63,6 @@ COMPIL		=	$(CC) $(C_FLAG) $(O_FLAG) $(C_OPT)
 ### RULES ###
 
 all: $(NAME)
-
-### RULES: COMPILATION ###
-
-$(DIROBJ)/%.o: $(DIRCHR)/%.c $(INC)
-	$(COMPIL)
-
-$(DIROBJ)/%.o: $(DIRLST)/%.c $(INC)
-	$(COMPIL)
-
-$(DIROBJ)/%.o: $(DIRMEM)/%.c $(INC)
-	$(COMPIL)
-
-$(DIROBJ)/%.o: $(DIRIO)/%.c $(INC)
-	$(COMPIL)
-
-$(DIROBJ)/%.o: $(DIRSTR)/%.c $(INC)
-	$(COMPIL)
 
 ### RULES: ARCHIVE ###
 
