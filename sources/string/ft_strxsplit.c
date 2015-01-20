@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static int	ft_todo(const char *s, int (*is_x)(int))
+static int	ft_todo(const char *s, int (*is_x)(char))
 {
 	int	i;
 	int	cp;
@@ -23,7 +23,7 @@ static int	ft_todo(const char *s, int (*is_x)(int))
 	return (cp);
 }
 
-static int	ft_modlen(const char *s, int (*is_x)(int))
+static int	ft_modlen(const char *s, int (*is_x)(char))
 {
 	int	i;
 
@@ -33,7 +33,7 @@ static int	ft_modlen(const char *s, int (*is_x)(int))
 	return (i);
 }
 
-char		**ft_strxsplit(char const *s, int (*is_x)(int))
+char		**ft_strxsplit(char const *s, int (*is_x)(char))
 {
 	int		i;
 	int		j;
