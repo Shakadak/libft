@@ -49,7 +49,6 @@ char		**ft_strxsplit(char const *s, int (*is_x)(char))
 		return (NULL);
 	while (s[i] != 0)
 	{
-		ft_putendl_fd("Splitting.", 2);
 		if (!is_x(s[i]))
 		{
 			tab[j] = ft_strsub(s, i, ft_modlen(&s[i], is_x));
