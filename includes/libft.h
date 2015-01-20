@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 11:00:59 by npineau           #+#    #+#             */
-/*   Updated: 2015/01/20 11:53:23 by npineau          ###   ########.fr       */
+/*   Updated: 2015/01/20 12:03:21 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ char				*ft_strsub(const char *src, unsigned int start, size_t n);
 char				*ft_strjoin(const char *s1, const char *s2);
 char				*ft_strtrim(const char *src);
 char				**ft_strsplit(char const *s, char c);
+char				**ft_strxsplit(char const *s, int (*is_x)(int));
 int					get_next_line(int fd, char **src);
 
 void				ft_putchar(char c);

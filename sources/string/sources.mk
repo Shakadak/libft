@@ -22,6 +22,7 @@ STR	:=	ft_isx.c \
 	ft_strnstr.c \
 	ft_strrchr.c \
 	ft_strsplit.c \
+	ft_strxsplit.c \
 	ft_strstr.c \
 	ft_strsub.c \
 	ft_strtrim.c
