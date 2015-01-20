@@ -1,4 +1,4 @@
-MEM := ft_array_free.c \
+MEM := ft_freesplit.c \
 	ft_bzero.c \
 	ft_memalloc.c \
 	ft_memccpy.c \
