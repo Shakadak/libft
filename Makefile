@@ -6,7 +6,7 @@
 #    By: npineau <npineau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 12:15:41 by npineau           #+#    #+#              #
-#    Updated: 2015/01/19 15:12:38 by npineau          ###   ########.fr        #
+#    Updated: 2015/01/22 12:59:06 by npineau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,14 @@ NAME		:=	libft.a
 
 ### DIRECTORIES ###
 
-DIRSRC		:=	sources
-DIROBJ		:=	objects
+DIRSRC		:=	src
+DIROBJ		:=	obj
 DIRCHR		:=	$(DIRSRC)/char
 DIRLST		:=	$(DIRSRC)/list
 DIRMEM		:=	$(DIRSRC)/memory
 DIRIO		:=	$(DIRSRC)/io
 DIRSTR		:=	$(DIRSRC)/string
-DIRINC		:=	includes
+DIRINC		:=	inc
 
 ### FILES ###
 
