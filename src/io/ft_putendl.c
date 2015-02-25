@@ -12,8 +12,16 @@
 
 #include "libft.h"
 
-void	ft_putendl(const char *str)
+int	ft_putendl(const char *str)
 {
-	ft_putstr(str);
-	ft_putchar('\n');
+	int	ret;
+	int	retn;
+
+	ret = ft_putstr(str);
+	if (ret == -1)
+		return (-1);
+	retn = ft_putchar('\n');
+	if ( retn == -1)
+		return (-1);
+	return (ret + retn);
 }
