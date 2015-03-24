@@ -8,5 +8,7 @@ IO	:=	ft_putchar.c \
 	ft_putstr_fd.c \
 	get_next_line.c
 
+OBJ := $(OBJ) $(IO:.c=.o)
+
 $(DIROBJ)/%.o: $(DIRIO)/%.c $(INC)
 	$(COMPIL)

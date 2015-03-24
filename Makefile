@@ -20,6 +20,7 @@ DIRCHR		:=	$(DIRSRC)/char
 DIRLST		:=	$(DIRSRC)/list
 DIRMEM		:=	$(DIRSRC)/memory
 DIRIO		:=	$(DIRSRC)/io
+DIRRB		:=	$(DIRSRC)/rbuffer
 DIRSTR		:=	$(DIRSRC)/string
 DIRINC		:=	inc
 
@@ -31,15 +32,8 @@ include $(DIRCHR)/sources.mk
 include $(DIRLST)/sources.mk
 include $(DIRMEM)/sources.mk
 include $(DIRIO)/sources.mk
+include $(DIRRB)/sources.mk
 include $(DIRSTR)/sources.mk
-
-### FILES: OBJECTS ###
-
-OBJ			:=	$(CHR:.c=.o) \
-				$(LST:.c=.o) \
-				$(MEM:.c=.o) \
-				$(IO:.c=.o) \
-				$(STR:.c=.o)
 
 ### FILES: PATHS ###
 

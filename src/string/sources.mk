@@ -27,5 +27,7 @@ STR	:=	ft_isx.c \
 	ft_strsub.c \
 	ft_strtrim.c
 
+OBJ := $(OBJ) $(STR:.c=.o)
+
 $(DIROBJ)/%.o: $(DIRSTR)/%.c $(INC)
 	$(COMPIL)
