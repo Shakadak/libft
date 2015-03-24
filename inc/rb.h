@@ -4,10 +4,10 @@
 typedef struct	s_rb
 {
 	void		*buffer;
-	size_t		size_type;
-	size_t		size_buffer;
+	size_t		type;
+	size_t		length;
 	size_t		start;
 	size_t		end;
-}
+}				t_rb;
 
 #endif

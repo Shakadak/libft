@@ -1,4 +1,4 @@
-RB	:= placeholder.c
+RB	:= rb_new.c
 
 OBJ := $(OBJ) $(RB:.c=.o)
 
