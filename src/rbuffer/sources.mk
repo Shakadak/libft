@@ -1,4 +1,5 @@
-RB	:= rb_new.c
+RB	:=	rb_new.c \
+		rb_dup.c
 
 OBJ := $(OBJ) $(RB:.c=.o)
 
