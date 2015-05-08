@@ -6,7 +6,7 @@
 #    By: npineau <npineau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 12:15:41 by npineau           #+#    #+#              #
-#    Updated: 2015/01/22 12:59:06 by npineau          ###   ########.fr        #
+#    Updated: 2015/03/27 15:20:20 by npineau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ DIRCHR		:=	$(DIRSRC)/char
 DIRLST		:=	$(DIRSRC)/list
 DIRMEM		:=	$(DIRSRC)/memory
 DIRIO		:=	$(DIRSRC)/io
+DIRRB		:=	$(DIRSRC)/rbuffer
 DIRSTR		:=	$(DIRSRC)/string
 DIRINC		:=	inc
 
@@ -31,15 +32,8 @@ include $(DIRCHR)/sources.mk
 include $(DIRLST)/sources.mk
 include $(DIRMEM)/sources.mk
 include $(DIRIO)/sources.mk
+include $(DIRRB)/sources.mk
 include $(DIRSTR)/sources.mk
-
-### FILES: OBJECTS ###
-
-OBJ			:=	$(CHR:.c=.o) \
-				$(LST:.c=.o) \
-				$(MEM:.c=.o) \
-				$(IO:.c=.o) \
-				$(STR:.c=.o)
 
 ### FILES: PATHS ###
 
@@ -54,7 +48,6 @@ AR_EXEC		=	$(AR) $(AR_FLAG) $@ $^
 
 ### COMPILATION ###
 
-CC			:=	gcc
 C_FLAG		:=	-Wall -Wextra -Werror
 O_FLAG		:=	-O3
 C_OPT		=	-o $@ -c $< -I $(DIRINC)

@@ -9,5 +9,7 @@ CHR	:= ft_atoi.c \
 	ft_tolower.c \
 	ft_toupper.c
 
+OBJ := $(OBJ) $(CHR:.c=.o)
+
 $(DIROBJ)/%.o: $(DIRCHR)/%.c $(INC)
 	$(COMPIL)

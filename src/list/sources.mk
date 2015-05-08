@@ -5,5 +5,7 @@ LST	:= ft_lstadd.c \
 	ft_lstmap.c \
 	ft_lstnew.c
 
+OBJ := $(OBJ) $(LST:.c=.o)
+
 $(DIROBJ)/%.o: $(DIRLST)/%.c $(INC)
 	$(COMPIL)
