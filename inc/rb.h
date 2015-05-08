@@ -9,7 +9,7 @@ typedef struct	s_rb
 	size_t		end;
 }				t_rb;
 
-t_rb	rb_dup(t_rb const src);
-t_rb	rb_new(size_t const length);
+t_rb			rb_dup(t_rb const src);
+t_rb			rb_new(size_t const length);
 
 #endif
