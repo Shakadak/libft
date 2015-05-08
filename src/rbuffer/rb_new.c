@@ -8,7 +8,7 @@ t_rb	rb_new(size_t const length, size_t const type)
 	ring.buffer = malloc(length * type);
 	ring.start = 0;
 	ring.end = 0;
-	if (ring.buffer !=  NULL)
+	if (ring.buffer != NULL)
 	{
 		ring.type = type;
 		ring.length = length;
