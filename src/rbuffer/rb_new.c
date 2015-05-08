@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-t_rb	rb_new(size_t const length, size_t const type)
+t_rb	rb_new(size_t const length)
 {
 	t_rb	ring;
 

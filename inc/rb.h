@@ -10,6 +10,6 @@ typedef struct	s_rb
 }				t_rb;
 
 t_rb	rb_dup(t_rb const src);
-t_rb	rb_new(size_t const length, size_t const type);
+t_rb	rb_new(size_t const length);
 
 #endif
