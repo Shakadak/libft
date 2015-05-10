@@ -1,3 +1,5 @@
+#include "libft.h"
+
 size_t	rb_memcpy(void const *const src, t_rb *dest, size_t const n)
 {
 	unsigned char				*dest2;
@@ -8,15 +10,15 @@ size_t	rb_memcpy(void const *const src, t_rb *dest, size_t const n)
 	i = 0;
 	src2 = src;
 	dest2 = dest->buffer;
-	max = dest->size - ((dest->tail > dest->head ? dest->tail
-				: dest->tail + dest->size) - dest->head);
+	max = dest->tail > dest->head ? dest->size + dest->head - dest->tail - 1
+		: dest->head - dest->tail - 1;
 	if (n < max)
 		max = n;
 	while (i < max)
 	{
-		dest2[(dest->tail + i) % dest->size] = src2[i];
+		dest2[(dest->tail + 1 + i) % dest->size] = src2[i];
 		++i;
 	}
-	dest->tail += max - 1;
+	dest->tail += max;
 	return (max);
 }
