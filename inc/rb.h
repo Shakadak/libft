@@ -4,9 +4,9 @@
 typedef struct	s_rb
 {
 	void		*buffer;
-	size_t		length;
-	size_t		start;
-	size_t		end;
+	size_t		size;
+	size_t		head;
+	size_t		tail;
 }				t_rb;
 
 t_rb			rb_dup(t_rb const src);
