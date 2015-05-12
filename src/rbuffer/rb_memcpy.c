@@ -10,8 +10,7 @@ size_t	rb_memcpy(void const *const src, t_rb *dest, size_t const n)
 	i = 0;
 	src2 = src;
 	dest2 = dest->buffer;
-	max = dest->tail > dest->head ? dest->size + dest->head - dest->tail - 1
-		: dest->head - dest->tail - 1;
+	max = dest->size - dest->used;
 	if (n < max)
 		max = n;
 	while (i < max)

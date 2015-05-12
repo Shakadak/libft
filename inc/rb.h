@@ -5,6 +5,7 @@ typedef struct	s_rb
 {
 	void		*buffer;
 	size_t		size;
+	size_t		used;
 	size_t		head;
 	size_t		tail;
 }				t_rb;

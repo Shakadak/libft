@@ -8,6 +8,7 @@ t_rb	rb_new(size_t const size)
 	ring.buffer = malloc(size * sizeof(unsigned char));
 	ring.head = 0;
 	ring.tail = 0;
+	ring.used = 0;
 	if (ring.buffer != NULL)
 	{
 		ring.size = size;
