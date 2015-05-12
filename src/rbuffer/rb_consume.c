@@ -1,6 +1,6 @@
 #include "libft.h"
 
-size_t	rb_cpymem(t_rb *const src, void *dest, size_t n)
+size_t	rb_consume(t_rb *const src, void *dest, size_t n)
 {
 	unsigned char	*dest2;
 	unsigned char	*src2;
@@ -18,5 +18,6 @@ size_t	rb_cpymem(t_rb *const src, void *dest, size_t n)
 		dest2[i] = src2[(src->head + i) % src->size];
 		++i;
 	}
+	src->head += max;
 	return (max);
 }

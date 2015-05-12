@@ -1,11 +1,11 @@
 #include "libft.h"
 
-size_t	rb_memcpy(void const *const src, t_rb *dest, size_t const n)
+size_t	rb_produce(void *const src, t_rb *dest, size_t const n)
 {
-	unsigned char				*dest2;
-	unsigned char const *const	src2;
-	size_t						max;
-	size_t						i;
+	unsigned char	*dest2;
+	unsigned char	*src2;
+	size_t			max;
+	size_t			i;
 
 	i = 0;
 	src2 = src;

@@ -2,5 +2,5 @@
 
 int	rb_full(t_rb const buff)
 {
-	return (buff.used = buff.size);
+	return (buff.used == buff.size);
 }
