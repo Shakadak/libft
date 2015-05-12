@@ -18,5 +18,6 @@ void			rb_free(t_rb * const rb);
 int				rb_full(t_rb const buff);
 t_rb			rb_new(size_t const length);
 size_t			rb_produce(void *const src, t_rb *dest, size_t const n);
+size_t	rb_u_read(int fildes, t_rb *const rb, size_t nbyte);
 
 #endif

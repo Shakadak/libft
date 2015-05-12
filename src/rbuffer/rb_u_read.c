@@ -1,3 +1,6 @@
+#include <unistd.h>
+#include "libft.h"
+
 size_t	rb_u_read(int fildes, t_rb *const rb, size_t nbyte)
 {
 	if (nbyte > rb->size - rb->used)
