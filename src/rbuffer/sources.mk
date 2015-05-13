@@ -6,7 +6,8 @@ RB	:=	rb_consume.c \
 		rb_full.c \
 		rb_new.c \
 		rb_produce.c \
-		rb_u_read.c
+		rb_u_read.c \
+		rb_u_write.c
 
 OBJ := $(OBJ) $(RB:.c=.o)
 
