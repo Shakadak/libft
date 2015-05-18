@@ -1,4 +1,4 @@
-STR	:=	ft_isx.c \
+STR	:=	ft_split_len.c \
 	ft_strcat.c \
 	ft_strchr.c \
 	ft_strclr.c \

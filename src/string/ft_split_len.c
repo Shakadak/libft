@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_split_len.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 12:29:05 by npineau           #+#    #+#             */
-/*   Updated: 2015/05/18 18:05:52 by npineau          ###   ########.fr       */
+/*   Created: 2015/05/18 18:10:03 by npineau           #+#    #+#             */
+/*   Updated: 2015/05/18 18:10:05 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t	ft_strlen(char *const str)
+size_t	ft_split_len(char **array)
 {
-	char	*much;
+	size_t	i;
 
-	much = str;
-	while (*much++ != 0)
-		;
-	return (much - str);
+	i = 0;
+	while (*array++)
+		++i;
+	return (i);
 }
