@@ -9,26 +9,26 @@ static void	exponent(char **s, int *e, int *c)
 	{
 		sign = 1;
 		i = 0;
-		*c = **s++;
+		*c = *(*s)++;
 		if (*c == '+')
-			*c = **s++;
+			*c = *(*s)++;
 		else if (*c == '-')
 		{
-			*c = **s++;
+			*c = *(*s)++;
 			sign = -1;
 		}
 		while (ft_isdigit(*c))
 		{
 			i = i * 10 + (*c - '0');
-			*c = **s++;
+			*c = *(*s)++;
 		}
-		e += i * sign;
+		*e += i * sign;
 	}
 }
 
 static void	exponent_to_d(double *a, int *e)
 {
-	while (e > 0)
+	while (*e > 0)
 	{
 		*a *= 10.0;
 		(*e)--;
