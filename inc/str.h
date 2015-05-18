@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 16:29:59 by npineau           #+#    #+#             */
-/*   Updated: 2015/05/08 16:30:01 by npineau          ###   ########.fr       */
+/*   Updated: 2015/05/18 18:23:36 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define BUFF_SIZE 32
 
 int					ft_isx(char *str, int (*is)(int));
+size_t				ft_split_len(char **array);
 char				*ft_strchr(const char *src, int c);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
