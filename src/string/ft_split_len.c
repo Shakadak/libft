@@ -6,13 +6,13 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 18:10:03 by npineau           #+#    #+#             */
-/*   Updated: 2015/05/18 18:10:05 by npineau          ###   ########.fr       */
+/*   Updated: 2015/05/18 18:26:31 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t	ft_split_len(char **array)
+size_t	ft_split_len(char *const *array)
 {
 	size_t	i;
 
