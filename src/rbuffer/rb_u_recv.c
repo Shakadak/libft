@@ -10,7 +10,7 @@ ssize_t	rb_u_recv(int socket, t_rb *const rb, size_t nbyte, int flags)
 	if (rb->tail + nbyte > rb->size)
 		if (rb->tail + 1 != rb->size)
 			nbyte = rb->size - rb->tail;
-	ret = recv(fildes, rb->buffer + (rb->tail + 1) % rb->size, nbyte, flags);
+	ret = recv(socket, rb->buffer + (rb->tail + 1) % rb->size, nbyte, flags);
 	if (ret > 0)
 	{
 		rb->tail = (rb->tail + ret) % rb->size;

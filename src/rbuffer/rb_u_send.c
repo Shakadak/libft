@@ -1,7 +1,7 @@
 #include <sys/socket.h>
 #include "libft.h"
 
-ssize_t	rb_u_write(int socket, t_rb * const rb, size_t nbyte, int flags)
+ssize_t	rb_u_send(int socket, t_rb * const rb, size_t nbyte, int flags)
 {
 	ssize_t	ret;
 
