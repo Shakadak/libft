@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 12:29:05 by npineau           #+#    #+#             */
-/*   Updated: 2015/05/18 18:05:52 by npineau          ###   ########.fr       */
+/*   Updated: 2015/05/21 20:26:01 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ size_t	ft_strlen(char *const str)
 	much = str;
 	while (*much++ != 0)
 		;
-	return (much - str);
+	return (much - str - 1);
 }
