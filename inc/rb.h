@@ -19,6 +19,8 @@ int				rb_full(t_rb const buff);
 t_rb			rb_new(size_t const length);
 size_t			rb_produce(void *const src, t_rb *dest, size_t const n);
 ssize_t			rb_u_read(int fildes, t_rb *const rb, size_t nbyte);
+ssize_t			rb_u_recv(int socket, t_rb *const rb, size_t nbyte, int flags);
+ssize_t			rb_u_send(int socket, t_rb * const rb, size_t nbyte, int flags);
 ssize_t			rb_u_write(int fildes, t_rb *const rb, size_t nbyte);
 
 #endif
