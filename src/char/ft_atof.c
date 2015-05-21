@@ -40,12 +40,14 @@ static void	exponent_to_d(double *a, int *e)
 	}
 }
 
-double		ft_atof(char *s)
+double		ft_atof(char const *const src)
 {
 	double	a;
 	int		e;
 	int		c;
+	char	*s;
 
+	s = (char *)src;
 	a = 0.0;
 	e = 0;
 	while ((c = *s++) != '\0' && ft_isdigit(c))
