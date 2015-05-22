@@ -45,11 +45,15 @@ double		ft_atof(char const *const src)
 	double	a;
 	int		e;
 	int		c;
+	int		p;
 	char	*s;
 
 	s = (char *)src;
 	a = 0.0;
 	e = 0;
+	p = 1;
+	if (*s == '-')
+		(p = -1) && ++s;
 	while ((c = *s++) != '\0' && ft_isdigit(c))
 		a = a * 10.0 + (c - '0');
 	if (c == '.')
@@ -60,5 +64,5 @@ double		ft_atof(char const *const src)
 		}
 	exponent(&s, &e, &c);
 	exponent_to_d(&a, &e);
-	return (a);
+	return (p * a);
 }
