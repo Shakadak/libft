@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rb_free.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/05/23 09:40:48 by npineau           #+#    #+#             */
+/*   Updated: 2015/05/23 09:40:49 by npineau          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include "libft.h"
 
-void	rb_free(t_rb * const rb)
+void	rb_free(t_rb *const rb)
 {
 	free(rb->buffer);
 	rb->buffer = NULL;

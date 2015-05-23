@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rb_u_send.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/05/23 09:42:20 by npineau           #+#    #+#             */
+/*   Updated: 2015/05/23 09:42:21 by npineau          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <sys/socket.h>
 #include "libft.h"
 
-ssize_t	rb_u_send(int socket, t_rb * const rb, size_t nbyte, int flags)
+ssize_t	rb_u_send(int socket, t_rb *const rb, size_t nbyte, int flags)
 {
 	ssize_t	ret;
 

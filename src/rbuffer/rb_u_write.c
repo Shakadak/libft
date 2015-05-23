@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rb_u_write.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/05/23 09:42:29 by npineau           #+#    #+#             */
+/*   Updated: 2015/05/23 09:42:30 by npineau          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include "libft.h"
 
-ssize_t	rb_u_write(int fildes, t_rb * const rb, size_t nbyte)
+ssize_t	rb_u_write(int fildes, t_rb *const rb, size_t nbyte)
 {
 	ssize_t	ret;
 
