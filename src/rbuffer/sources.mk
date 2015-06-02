@@ -2,6 +2,7 @@ RB	:=	rb_consume.c \
 		rb_cpymem.c \
 		rb_dup.c \
 		rb_empty.c \
+		rb_flatten.c \
 		rb_free.c \
 		rb_full.c \
 		rb_new.c \
