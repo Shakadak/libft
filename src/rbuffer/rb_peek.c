@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/02 17:15:09 by npineau           #+#    #+#             */
-/*   Updated: 2015/06/02 17:15:11 by npineau          ###   ########.fr       */
+/*   Updated: 2015/06/02 17:25:28 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 char	rb_peek(t_rb const rb)
 {
+	if (rb_empty(rb))
+		return (0);
 	return (rb.buffer[rb.head]);
 }
