@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:41:31 by npineau           #+#    #+#             */
-/*   Updated: 2015/05/23 09:41:52 by npineau          ###   ########.fr       */
+/*   Updated: 2015/06/02 17:02:49 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_rb	rb_new(size_t const size)
 {
 	t_rb	ring;
 
-	ring.buffer = malloc(size * sizeof(unsigned char));
+	ring.buffer = malloc(size * sizeof(ring.buffer));
 	ring.head = 0;
 	ring.tail = 0;
 	ring.used = 0;

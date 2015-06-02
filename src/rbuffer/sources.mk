@@ -1,5 +1,5 @@
 RB	:=	rb_consume.c \
-		rb_cpymem.c \
+		rb_cpystr.c \
 		rb_dup.c \
 		rb_empty.c \
 		rb_flatten.c \

@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:40:33 by npineau           #+#    #+#             */
-/*   Updated: 2015/05/23 09:40:35 by npineau          ###   ########.fr       */
+/*   Updated: 2015/06/02 17:03:23 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_rb	rb_dup(t_rb const src)
 {
 	t_rb	copy;
 
-	copy.buffer = ft_memdup(src.buffer, src.size * sizeof(unsigned char));
+	copy.buffer = ft_memdup(src.buffer, src.size * sizeof(copy.buffer));
 	if (copy.buffer == NULL)
 	{
 		copy.size = 0;
