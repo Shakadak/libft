@@ -1,4 +1,5 @@
-RB	:=	rb_consume.c \
+RB	:=	rb_append.c \
+		rb_consume.c \
 		rb_cpystr.c \
 		rb_dup.c \
 		rb_empty.c \

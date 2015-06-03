@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:39:35 by npineau           #+#    #+#             */
-/*   Updated: 2015/06/03 11:30:30 by npineau          ###   ########.fr       */
+/*   Updated: 2015/06/03 11:54:11 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct	s_rb
 	size_t		tail;
 }				t_rb;
 
+int				rb_append(t_rb *const rb, char const c);
 size_t			rb_consume(t_rb *const src, char *dest, size_t n);
 size_t			rb_cpystr(t_rb *const src, char *dest, size_t n);
 t_rb			rb_dup(t_rb const src);

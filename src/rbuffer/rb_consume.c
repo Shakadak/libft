@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:40:23 by npineau           #+#    #+#             */
-/*   Updated: 2015/06/02 17:05:54 by npineau          ###   ########.fr       */
+/*   Updated: 2015/06/03 11:50:30 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ size_t	rb_consume(t_rb *const src, char *dest, size_t n)
 		++i;
 	}
 	src->head += max;
+	src->used -= max;
 	return (max);
 }
