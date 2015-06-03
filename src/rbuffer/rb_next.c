@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/02 17:24:42 by npineau           #+#    #+#             */
-/*   Updated: 2015/06/02 17:25:32 by npineau          ###   ########.fr       */
+/*   Updated: 2015/06/03 12:00:25 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ char	rb_next(t_rb *const rb)
 		return (0);
 	c = rb_peek(*rb);
 	rb->head = (rb->head + 1) % rb->size;
-	++rb->used;
+	++(rb->used);
 	return (c);
 }
