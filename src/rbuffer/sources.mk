@@ -11,6 +11,7 @@ RB	:=	rb_append.c \
 		rb_new.c \
 		rb_next.c \
 		rb_peek.c \
+		rb_pop_n.c \
 		rb_produce.c \
 		rb_u_read.c \
 		rb_u_recv.c \
