@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:41:55 by npineau           #+#    #+#             */
-/*   Updated: 2015/06/03 11:50:32 by npineau          ###   ########.fr       */
+/*   Updated: 2015/06/03 14:30:35 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	rb_produce(char *const src, t_rb *dest, size_t const n)
 		max = n;
 	while (i < max)
 	{
-		dest->buffer[(dest->tail + 1 + i) % dest->size] = src[i];
+		dest->buffer[(dest->tail + i) % dest->size] = src[i];
 		++i;
 	}
 	dest->tail += max;
