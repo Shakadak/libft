@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb_flatten.c                                       :+:      :+:    :+:   */
+/*   rb_nequ.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/06/03 11:28:35 by npineau           #+#    #+#             */
-/*   Updated: 2015/06/03 11:29:00 by npineau          ###   ########.fr       */
+/*   Created: 2015/06/03 11:32:42 by npineau           #+#    #+#             */
+/*   Updated: 2015/06/03 11:33:10 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*rb_flatten(t_rb *const src)
+int	rb_nequ(t_rb rb1, t_rb rb2, size_t n)
 {
-	void	*dest;
-
-	dest = ft_strnew(src->used);
-	rb_cpystr(src, dest, src->used);
-	return (dest);
+	while (n-- > 0)
+		if (rb_next(&rb1) != rb_next(&rb2))
+			return (0);
+	return (1);
 }

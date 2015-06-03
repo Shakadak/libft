@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb_flatten.c                                       :+:      :+:    :+:   */
+/*   rb_from_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/06/03 11:28:35 by npineau           #+#    #+#             */
-/*   Updated: 2015/06/03 11:29:00 by npineau          ###   ########.fr       */
+/*   Created: 2015/06/03 11:26:58 by npineau           #+#    #+#             */
+/*   Updated: 2015/06/03 11:26:59 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*rb_flatten(t_rb *const src)
+t_rb	rb_from_str(char const *const str)
 {
-	void	*dest;
+	size_t	len;
 
-	dest = ft_strnew(src->used);
-	rb_cpystr(src, dest, src->used);
-	return (dest);
+	len = ft_strlen(str);
+	return ((t_rb){ft_strdup(str), len, len, 0, len - 1});
 }

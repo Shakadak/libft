@@ -4,7 +4,9 @@ RB	:=	rb_consume.c \
 		rb_empty.c \
 		rb_flatten.c \
 		rb_free.c \
+		rb_from_str.c \
 		rb_full.c \
+		rb_nequ.c \
 		rb_new.c \
 		rb_next.c \
 		rb_peek.c \
