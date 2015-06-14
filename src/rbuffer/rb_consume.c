@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:40:23 by npineau           #+#    #+#             */
-/*   Updated: 2015/06/03 11:50:30 by npineau          ###   ########.fr       */
+/*   Updated: 2015/06/14 12:10:38 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,11 @@
 
 size_t	rb_consume(t_rb *const src, char *dest, size_t n)
 {
-	size_t			max;
 	size_t			i;
+	char			c;
 
 	i = 0;
-	max = src->used;
-	if (n < max)
-		max = n;
-	while (i < max)
-	{
-		dest[i] = src->buffer[(src->head + i) % src->size];
-		++i;
-	}
-	src->head += max;
-	src->used -= max;
-	return (max);
+	while (i < n && (c = rb_peek(*src)) != 0)
+		dest[i++] = rb_next(src);
+	return (i);
 }
