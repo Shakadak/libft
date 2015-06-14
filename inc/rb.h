@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:39:35 by npineau           #+#    #+#             */
-/*   Updated: 2015/06/03 13:10:03 by npineau          ###   ########.fr       */
+/*   Updated: 2015/06/14 11:11:28 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ int				rb_nequ(t_rb rb1, t_rb rb2, size_t n);
 t_rb			rb_new(size_t const length);
 char			rb_next(t_rb *const rb);
 char			rb_peek(t_rb const rb);
+int				rb_pop_n(t_rb *const rb, size_t n);
 size_t			rb_produce(char *const src, t_rb *dest, size_t const n);
+t_rb			rb_take_while_not(int (*p)(char), t_rb xs);
 ssize_t			rb_u_read(int fildes, t_rb *const rb, size_t nbyte);
 ssize_t			rb_u_recv(int socket, t_rb *const rb, size_t nbyte, int flags);
 ssize_t			rb_u_send(int socket, t_rb *const rb, size_t nbyte, int flags);
