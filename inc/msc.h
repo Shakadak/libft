@@ -3,3 +3,5 @@
 
 int	imin(int l, int r);
 int	imax(int l, int r);
+
+#endif

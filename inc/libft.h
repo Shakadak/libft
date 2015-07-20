@@ -20,5 +20,6 @@
 # include "mem.h"
 # include "str.h"
 # include "rb.h"
+# include "msc.h"
 
 #endif

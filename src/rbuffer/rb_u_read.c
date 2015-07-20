@@ -10,15 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 ssize_t	rb_u_read(int fildes, t_rb *const rb, size_t nbyte)
 {
 	ssize_t	ret;
 
-	if (nbyte > rb->size - rb->used)
-		nbyte = rb->size - rb->used;
+	nbyte = imin(rb->size - rb->used, nbyte);
 	if (rb->tail + nbyte > rb->size)
 		if (rb->tail + 1 != rb->size)
 			nbyte = rb->size - rb->tail;
