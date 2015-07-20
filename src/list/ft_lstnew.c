@@ -20,15 +20,10 @@ t_list	*ft_lstnew(const void *content, size_t content_size)
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
-	new->next = NULL;
-	if (!content)
+	ft_bzero(new, sizeof(new));
+	if (content)
 	{
-		new->content = NULL;
-		new->content_size = 0;
-	}
-	else
-	{
-		new->content = malloc(sizeof(content) * content_size);
+		new->content = malloc(content_size);
 		if (!new->content)
 		{
 			free(new);
