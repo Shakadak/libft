@@ -12,17 +12,14 @@
 
 #include "libft.h"
 
-void	ft_bzero(void *src, size_t length)
+void	ft_bzero(void *src, size_t len)
 {
-	unsigned char	*dest;
+	unsigned char	*mem;
 
-	dest = (unsigned char *)src;
-	if (src && length)
+	mem = (unsigned char *)src;
+	if (mem)
 	{
-		while (length > 0)
-		{
-			dest[length - 1] = 0;
-			length--;
-		}
+		while (len > 0)
+			mem[--len] = 0;
 	}
 }

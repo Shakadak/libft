@@ -25,15 +25,6 @@ char	*ft_strnew(size_t size)
 
 	str = (char *)malloc(sizeof(char) * (size + 1));
 	if (str)
-	{
-		size++;
-		while (size)
-		{
-			size--;
-			str[size] = 0;
-		}
-		return (str);
-	}
-	else
-		return (NULL);
+		ft_bzero(str, size + 1);
+	return (str);
 }
