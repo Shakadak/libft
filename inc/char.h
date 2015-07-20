@@ -13,8 +13,8 @@
 #ifndef CHAR_H
 # define CHAR_H
 
-double				ft_atof(char const *const s);
-int					ft_atoi(const char *src);
+double				ft_atof(char const *s);
+int					ft_atoi(char const *src);
 char				*ft_itoa(int n);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);

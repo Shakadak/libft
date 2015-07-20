@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static void	exponent(char **s, int *e, int *c)
+static void	exponent(char const **s, int *e, int *c)
 {
 	int	sign;
 	int	i;
@@ -52,20 +52,21 @@ static void	exponent_to_d(double *a, int *e)
 	}
 }
 
-double		ft_atof(char const *const src)
+double		ft_atof(char const *s)
 {
 	double	a;
 	int		e;
 	int		c;
 	int		p;
-	char	*s;
 
-	s = (char *)src;
 	a = 0.0;
 	e = 0;
 	p = 1;
 	if (*s == '-')
-		(p = -1) && ++s;
+	{
+		(p = -1);
+		++s;
+	}
 	while ((c = *s++) != '\0' && ft_isdigit(c))
 		a = a * 10.0 + (c - '0');
 	if (c == '.')
