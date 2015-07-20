@@ -14,12 +14,12 @@
 
 int	rb_chr(t_rb rb, int const c)
 {
-	int	i;
+	int	before;
 
-	i = 0;
+	before = rb.size;
 	while (rb_peek(rb) != c)
-		++i && rb_next(&rb);
+		rb_next(&rb);
 	if (rb_empty(rb))
 		return (-1);
-	return (i);
+	return (before - rb.size);
 }

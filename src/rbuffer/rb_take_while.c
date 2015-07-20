@@ -20,6 +20,9 @@ t_rb	rb_take_while(int (*p)(char), t_rb xs)
 	res = rb_new(xs.size);
 	x = rb_next(&xs);
 	while (x && p(x))
-		rb_append(&res, x) && (x = rb_next(&xs));
+	{
+		rb_append(&res, x);
+		x = rb_next(&xs);
+	}
 	return (res);
 }

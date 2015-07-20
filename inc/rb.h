@@ -13,6 +13,8 @@
 #ifndef RB_H
 # define RB_H
 
+#include <unistd.h>
+
 typedef struct	s_rb
 {
 	char		*buffer;
