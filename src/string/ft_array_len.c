@@ -12,7 +12,7 @@
 
 #include <string.h>
 
-size_t	ft_split_len(char const *const *const array)
+size_t	ft_array_len(char const *const *const array)
 {
 	size_t	i;
 
