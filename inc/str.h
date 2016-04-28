@@ -16,7 +16,7 @@
 # define BUFF_SIZE 32
 
 int					ft_isx(char *str, int (*is)(int));
-size_t				ft_split_len(char const *const *const array);
+size_t				ft_array_len(char const *const *const array);
 char				*ft_strchr(const char *src, int c);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
