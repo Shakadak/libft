@@ -1,5 +1,5 @@
 STR	:=	ft_isx.c \
-		ft_split_len.c \
+		ft_array_len.c \
 		ft_strcat.c \
 		ft_strchr.c \
 		ft_strclr.c \
