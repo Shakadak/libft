@@ -19,6 +19,7 @@ DIROBJ		:=	obj
 DIRCHR		:=	$(DIRSRC)/char
 DIRLST		:=	$(DIRSRC)/list
 DIRMEM		:=	$(DIRSRC)/memory
+DIRMSC		:=	$(DIRSRC)/misc
 DIRIO		:=	$(DIRSRC)/io
 DIRSTR		:=	$(DIRSRC)/string
 DIRINC		:=	inc
@@ -30,6 +31,7 @@ DIRINC		:=	inc
 include $(DIRCHR)/sources.mk
 include $(DIRLST)/sources.mk
 include $(DIRMEM)/sources.mk
+include $(DIRMSC)/sources.mk
 include $(DIRIO)/sources.mk
 include $(DIRSTR)/sources.mk
 

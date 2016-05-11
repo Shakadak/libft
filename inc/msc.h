@@ -13,7 +13,17 @@
 #ifndef MSC_H
 # define MSC_H
 
-int	imin(int l, int r);
-int	imax(int l, int r);
+typedef struct	s_pair
+{
+	void	*first;
+	void	*second;
+}				t_pair;
+
+void			*fst(t_pair pair);
+void			*snd(t_pair pair);
+t_pair			pair(void *first, void *second);
+
+int				imin(int l, int r);
+int				imax(int l, int r);
 
 #endif
