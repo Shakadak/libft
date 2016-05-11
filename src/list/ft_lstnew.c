@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "list.h"
+#include "mem.h"
 
 t_list	*ft_lstnew(const void *content, size_t content_size)
 {
