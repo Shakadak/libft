@@ -22,7 +22,7 @@ t_pair	strspan(int (*p)(char), const char *str)
 	{
 		i = i + 1;
 	}
-	return (pair(ft_strndup(i, str), ft_strdup(str + i)));
+	return (pair((void *)ft_strndup(i, str), (void *)ft_strdup(str + i)));
 }
 
 t_pair	strbreak(int (*p)(char), const char *str)
@@ -34,5 +34,5 @@ t_pair	strbreak(int (*p)(char), const char *str)
 	{
 		i = i + 1;
 	}
-	return (pair(ft_strndup(i, str), ft_strdup(str + i)));
+	return (pair((void *)ft_strndup(i, str), (void *)ft_strdup(str + i)));
 }

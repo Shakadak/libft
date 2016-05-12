@@ -27,8 +27,9 @@ t_list	*split_when(int (*p)(char), const char *str)
 	if (snd(t1) == NULL)
 		return (NULL);
 	t2 = strbreak(p, snd(t1));
-	free(snd(t1));
 	h = ft_lstnew(fst(t2), ft_strlen(fst(t2)));
+	free(snd(t1));
+	free(fst(t2));
 	h->next = split_when(p, snd(t2));
 	free(snd(t2));
 	return (h);
