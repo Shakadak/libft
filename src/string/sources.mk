@@ -18,15 +18,19 @@ STR	:=	ft_isx.c \
 		ft_strncat.c \
 		ft_strncmp.c \
 		ft_strncpy.c \
+		ft_strndup.c \
 		ft_strnequ.c \
 		ft_strnew.c \
+		ft_strnlen.c \
 		ft_strnstr.c \
 		ft_strrchr.c \
 		ft_strsplit.c \
 		ft_strxsplit.c \
 		ft_strstr.c \
 		ft_strsub.c \
-		ft_strtrim.c
+		ft_strtrim.c \
+		spanbreak.c \
+		split_when.c
 
 OBJ := $(OBJ) $(STR:.c=.o)
 

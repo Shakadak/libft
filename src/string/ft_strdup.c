@@ -15,23 +15,24 @@
 
 char	*ft_strdup(const char *src)
 {
-	size_t	length;
-	size_t	index;
+	size_t	len;
+	size_t	i;
 	char	*copy;
 
-	length = ft_strlen(src);
-	if (length !=0)
-	{	
-		index = 0;
-		copy = (char *)malloc((1 + length) * sizeof(char));
+	len = ft_strlen(src);
+	copy = NULL;
+	if (len != 0)
+	{
+		i = 0;
+		copy = (char *)malloc((1 + len) * sizeof(char));
 		if (copy != NULL)
 		{
-			while (index < length)
+			while (i < len)
 			{
-				copy[index] = src[index];
-				index++;
+				copy[i] = src[i];
+				i++;
 			}
-			copy[index] = 0;
+			copy[i] = 0;
 		}
 	}
 	return (copy);

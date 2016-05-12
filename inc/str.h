@@ -16,6 +16,8 @@
 # define BUFF_SIZE 32
 
 # include <stddef.h>
+# include "msc.h"
+# include "list.h"
 
 int					ft_isx(char *str, int (*is)(int));
 size_t				ft_array_len(char const *const *const array);
@@ -47,5 +49,11 @@ char				*ft_strtrim(const char *src);
 char				**ft_strsplit(char const *s, char c);
 char				**ft_strxsplit(char const *s, int (*is_x)(char));
 int					get_next_line(int fd, char **src);
+
+char				*ft_strndup(size_t n, const char *src);
+size_t				ft_strnlen(size_t n, const char *str);
+t_pair				strspan(int (*p)(char), const char *str);
+t_pair				strbreak(int (*p)(char), const char *str);
+t_list				*split_when(int (*p)(char), const char *str);
 
 #endif
