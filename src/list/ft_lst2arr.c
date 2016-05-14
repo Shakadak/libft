@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lst2arr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 11:00:59 by npineau           #+#    #+#             */
-/*   Updated: 2015/01/20 12:11:40 by npineau          ###   ########.fr       */
+/*   Created: 2016/05/14 14:30:24 by npineau           #+#    #+#             */
+/*   Updated: 2016/05/14 14:30:26 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "list.h"
+#include "arr.h"
+#include "mem.h"
 
-# include <string.h>
-# include "list.h"
-# include "char.h"
-# include "io.h"
-# include "list.h"
-# include "mem.h"
-# include "str.h"
-# include "msc.h"
+t_arr	*ft_lst2arr(const t_list *lst)
+{
+	t_arr	*arr;
+	t_list	*l;
+	size_t	i;
 
-#endif
+	arr = ft_arrnew(ft_lstlen(lst));
+	if (arr)
+	{
+		i = 0;
+		l = (t_list *)lst;
+		while (l)
+		{
+			arr[i].content = ft_memdup(l->content, l->content_size);
+			arr[i].size = l->content_size;
+			l = l->next;
+		}
+	}
+	return (arr);
+}

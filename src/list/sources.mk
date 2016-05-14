@@ -4,7 +4,8 @@ LST	:= ft_lstadd.c \
 	ft_lstdelone.c \
 	ft_lstiter.c \
 	ft_lstmap.c \
-	ft_lstnew.c
+	ft_lstnew.c \
+	ft_lst2arr.c
 
 OBJ := $(OBJ) $(LST:.c=.o)
 

@@ -16,6 +16,7 @@ NAME		:=	libft.a
 
 DIRSRC		:=	src
 DIROBJ		:=	obj
+DIRARR		:=	$(DIRSRC)/arr
 DIRCHR		:=	$(DIRSRC)/char
 DIRLST		:=	$(DIRSRC)/list
 DIRMEM		:=	$(DIRSRC)/memory
@@ -28,6 +29,7 @@ DIRINC		:=	inc
 
 ### FILES: SOURCES ###
 
+include $(DIRARR)/sources.mk
 include $(DIRCHR)/sources.mk
 include $(DIRLST)/sources.mk
 include $(DIRMEM)/sources.mk

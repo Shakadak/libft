@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 11:00:59 by npineau           #+#    #+#             */
-/*   Updated: 2015/01/20 12:11:40 by npineau          ###   ########.fr       */
+/*   Created: 2016/05/14 14:40:34 by npineau           #+#    #+#             */
+/*   Updated: 2016/05/14 14:40:36 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "list.h"
 
-# include <string.h>
-# include "list.h"
-# include "char.h"
-# include "io.h"
-# include "list.h"
-# include "mem.h"
-# include "str.h"
-# include "msc.h"
+size_t	ft_lstlen(const t_list *lst)
+{
+	t_lst	*l;
+	size_t	i;
 
-#endif
+	i = 0;
+	l = lst;
+	while (l)
+	{
+		i += 1;
+		l = l->next;
+	}
+	return (i);
+}
