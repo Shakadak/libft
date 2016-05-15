@@ -17,34 +17,22 @@
 
 typedef struct	s_rb
 {
-	char		*buffer;
-	size_t		size;
+	void		*buffer;
+	size_t		capacity;
+	size_t		esize;
 	size_t		used;
-	size_t		head;
-	size_t		tail;
+	void		*head;
+	void		*tail;
 }				t_rb;
 
-int				rb_append(t_rb *const rb, char const c);
-int				rb_chr(t_rb rb, int const c);
-size_t			rb_consume(t_rb *const src, char *dest, size_t n);
-size_t			rb_cpystr(t_rb const src, char *dest, size_t n);
-t_rb			rb_dup(t_rb const src);
+int				rb_push_back(t_rb *const rb, void const *src);
+int				rb_pop_front(t_rb *const rb, void **item);
+int				rb_dup(t_rb const src, t_rb *dest);
 int				rb_empty(t_rb const buff);
-char			*rb_flatten(t_rb const src);
-void			rb_free(t_rb *const rb);
-t_rb			rb_from_str(char const *const str);
+void			rb_free(t_rb rb);
 int				rb_full(t_rb const buff);
-int				rb_nequ(t_rb rb1, t_rb rb2, size_t n);
 t_rb			rb_new(size_t const length);
-char			rb_next(t_rb *const rb);
-char			rb_peek(t_rb const rb);
-int				rb_pop_n(t_rb *const rb, size_t n);
-size_t			rb_produce(char *const src, t_rb *dest, size_t const n);
-t_rb			rb_take_while(int (*p)(char), t_rb xs);
-t_rb			rb_take_while_not(int (*p)(char), t_rb xs);
-ssize_t			rb_u_read(int fildes, t_rb *const rb, size_t nbyte);
-ssize_t			rb_u_recv(int socket, t_rb *const rb, size_t nbyte, int flags);
-ssize_t			rb_u_send(int socket, t_rb *const rb, size_t nbyte, int flags);
-ssize_t			rb_u_write(int fildes, t_rb *const rb, size_t nbyte);
+int				rb_peek(t_rb const rb, void *item);
+int				rb_drop_n(t_rb *const rb, size_t n);
 
 #endif
