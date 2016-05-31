@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	rb_empty(t_rb const buff)
+int	rb_empty(t_rb const rb)
 {
-	return (buff.used == 0);
+	return (rb.used == 0);
 }

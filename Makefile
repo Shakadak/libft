@@ -20,7 +20,7 @@ DIRCHR		:=	$(DIRSRC)/char
 DIRLST		:=	$(DIRSRC)/list
 DIRMEM		:=	$(DIRSRC)/memory
 DIRIO		:=	$(DIRSRC)/io
-DIRRB		:=	$(DIRSRC)/rbuffer
+DIRRB		:=	$(DIRSRC)/rb
 DIRSTR		:=	$(DIRSRC)/string
 DIRINC		:=	inc
 

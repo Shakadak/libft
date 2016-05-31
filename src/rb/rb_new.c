@@ -13,21 +13,24 @@
 #include <stdlib.h>
 #include "libft.h"
 
-t_rb	rb_new(size_t const size)
+int	rb_new(size_t const capacity, size_t const esize, t_rb *slot)
 {
-	t_rb	ring;
+	int		rv;
 
-	ring.buffer = malloc(size * sizeof(ring.buffer));
-	ring.head = 0;
-	ring.tail = 0;
-	ring.used = 0;
-	if (ring.buffer != NULL)
+	rv = 0;
+	slot.buffer = malloc(size * capacity);
+	slot.used = 0;
+	if (slot.buffer != NULL)
 	{
-		ring.size = size;
+		slot.head = slot.buffer;
+		slot.tail = slot.buffer;
+		slot.capacity = capacity
+		slot.esize = esize;
+		rv = 1;
 	}
 	else
 	{
-		ring.size = 0;
+		slot.size = 0;
 	}
-	return (ring);
+	return (rv);
 }

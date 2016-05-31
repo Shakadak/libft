@@ -16,5 +16,5 @@
 void	rb_free(t_rb *const rb)
 {
 	free(rb->buffer);
-	rb->buffer = NULL;
+	ft_bzero(rb, sizeof(t_rb));
 }

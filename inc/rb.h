@@ -25,14 +25,14 @@ typedef struct	s_rb
 	void		*tail;
 }				t_rb;
 
-int				rb_push_back(t_rb *const rb, void const *src);
-int				rb_pop_front(t_rb *const rb, void **item);
-int				rb_dup(t_rb const src, t_rb *dest);
+int				rb_push_back(t_rb *rb, void const *src);
+int				rb_pop_front(t_rb *rb, void **item);
+int				rb_dup(t_rb const src, t_rb *slot);
 int				rb_empty(t_rb const buff);
 void			rb_free(t_rb rb);
-int				rb_full(t_rb const buff);
-t_rb			rb_new(size_t const length);
+int				rb_full(t_rb const rb);
+int				rb_new(size_t const capacity, size_t esize, t_rb *slot);
 int				rb_peek(t_rb const rb, void *item);
-int				rb_drop_n(t_rb *const rb, size_t n);
+int				rb_drop_n(t_rb const *rb, size_t n);
 
 #endif

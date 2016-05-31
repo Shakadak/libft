@@ -12,24 +12,24 @@
 
 #include "libft.h"
 
-t_rb	rb_dup(t_rb const src)
+int	rb_dup(t_rb const src, t_rb *slot)
 {
-	t_rb	copy;
+	int	rv;;
 
-	copy.buffer = ft_memdup(src.buffer, src.size * sizeof(copy.buffer));
-	if (copy.buffer == NULL)
+	rv = 0;
+	slot.buffer = ft_memdup(src.buffer, src.size * src.capacity);
+	if (slot.buffer == NULL)
 	{
-		copy.size = 0;
-		copy.used = 0;
-		copy.head = 0;
-		copy.tail = 0;
+		ft_bzero(slot, sizeof(t_rb));
 	}
 	else
 	{
-		copy.size = src.size;
-		copy.used = src.used;
-		copy.head = src.head;
-		copy.tail = src.tail;
+		slot.capacity = src.capacity;
+		slot.esize = src.esize;
+		slot.used = src.used;
+		slot.head = src.head;
+		slot.tail = src.tail;
+		rv = 1;
 	}
-	return (copy);
+	return (rv);
 }
