@@ -18,19 +18,20 @@ int	rb_new(size_t const capacity, size_t const esize, t_rb *slot)
 	int		rv;
 
 	rv = 0;
-	slot.buffer = malloc(size * capacity);
-	slot.used = 0;
-	if (slot.buffer != NULL)
+	slot->buffer = malloc(esize * capacity);
+	slot->used = 0;
+	if (slot->buffer != NULL)
 	{
-		slot.head = slot.buffer;
-		slot.tail = slot.buffer;
-		slot.capacity = capacity
-		slot.esize = esize;
+		slot->head = slot->buffer;
+		slot->tail = slot->buffer;
+		slot->capacity = capacity;
+		slot->esize = esize;
 		rv = 1;
 	}
 	else
 	{
-		slot.size = 0;
+		slot->capacity = 0;
+		slot->esize = 0;
 	}
 	return (rv);
 }

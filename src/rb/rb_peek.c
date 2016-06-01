@@ -12,9 +12,15 @@
 
 #include "libft.h"
 
-char	rb_peek(t_rb const rb)
+int	rb_peek(t_rb const rb, void **item)
 {
 	if (rb_empty(rb))
+	{
 		return (0);
-	return (rb.buffer[rb.head]);
+	}
+	else
+	{
+		*item = rb.head;
+		return (1);
+	}
 }
