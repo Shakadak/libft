@@ -14,7 +14,7 @@
 
 int	rb_dup(t_rb const src, t_rb *slot)
 {
-	int	rv;;
+	int	rv;
 
 	rv = 0;
 	slot.buffer = ft_memdup(src.buffer, src.size * src.capacity);

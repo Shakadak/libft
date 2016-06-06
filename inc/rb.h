@@ -6,14 +6,14 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:39:35 by npineau           #+#    #+#             */
-/*   Updated: 2015/06/14 11:15:08 by npineau          ###   ########.fr       */
+/*   Updated: 2016/06/06 12:25:27 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RB_H
 # define RB_H
 
-#include <unistd.h>
+# include <unistd.h>
 
 typedef struct	s_rb
 {
