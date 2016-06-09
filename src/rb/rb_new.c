@@ -22,6 +22,7 @@ int	rb_new(size_t const capacity, size_t const esize, t_rb *slot)
 	slot->used = 0;
 	if (slot->buffer != NULL)
 	{
+		ft_bzero(slot->buffer, esize * capacity);
 		slot->head = slot->buffer;
 		slot->tail = slot->buffer;
 		slot->capacity = capacity;
@@ -30,8 +31,7 @@ int	rb_new(size_t const capacity, size_t const esize, t_rb *slot)
 	}
 	else
 	{
-		slot->capacity = 0;
-		slot->esize = 0;
+		ft_bzero(slot, sizeof(t_rb));
 	}
 	return (rv);
 }
