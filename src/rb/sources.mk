@@ -1,4 +1,5 @@
 RB	:=	rb_dequeue.c \
+		rb_drop_n.c \
 		rb_dup.c \
 		rb_empty.c \
 		rb_enqueue.c \

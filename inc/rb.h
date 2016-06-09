@@ -33,6 +33,6 @@ void			rb_free(t_rb *rb);
 int				rb_full(t_rb const rb);
 int				rb_new(size_t const capacity, size_t esize, t_rb *slot);
 int				rb_peek(t_rb const rb, void **item);
-int				rb_drop_n(t_rb const *rb, size_t n);
+int				rb_drop_n(t_rb *rb, size_t n);
 
 #endif
