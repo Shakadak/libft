@@ -25,8 +25,8 @@ typedef struct	s_rb
 	void		*tail;
 }				t_rb;
 
-int				rb_push_back(t_rb *rb, void const *src);
-int				rb_pop_front(t_rb *rb, void **item);
+int				rb_enqueue(t_rb *rb, void const *src);
+int				rb_dequeue(t_rb *rb, void **item);
 int				rb_dup(t_rb const src, t_rb *slot);
 int				rb_empty(t_rb const buff);
 void			rb_free(t_rb *rb);

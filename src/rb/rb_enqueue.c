@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb_pop_front.c                                     :+:      :+:    :+:   */
+/*   rb_push_back.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/01 14:17:01 by npineau           #+#    #+#             */
-/*   Updated: 2016/06/01 14:17:09 by npineau          ###   ########.fr       */
+/*   Created: 2016/06/01 14:17:11 by npineau           #+#    #+#             */
+/*   Updated: 2016/06/01 14:17:13 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	rb_pop_front(t_rb *rb, void **item)
+int	rb_enqueue(t_rb *rb, void const *src)
 {
 	int	rv;
 
-	if ((rv = !rb_empty(*rb)))
+	if ((rv = !rb_full(*rb)))
 	{
-		*item = ft_memdup(rb->head, rb->esize);
-		if (*item != NULL)
+		ft_memcpy(rb->tail, src, rb->esize);
+		rb->tail += rb->esize;
+		if (rb->tail == (rb->buffer + rb->capacity * rb->esize))
 		{
-			rb->head += rb->esize;
-			if (rb->head == (rb->buffer + rb->capacity * rb->esize))
-			{
-				rb->head = rb->buffer;
-			}
+			rb->tail = rb->buffer;
 		}
-		else
-		{
-			rv = 0;
-		}
+		rb->used += 1;
 	}
 	return (rv);
 }

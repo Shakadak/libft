@@ -1,9 +1,11 @@
-RB	:=	rb_free.c \
+RB	:=	rb_dequeue.c \
+		rb_dup.c \
+		rb_empty.c \
+		rb_enqueue.c \
+		rb_free.c \
 		rb_full.c \
 		rb_new.c \
-		rb_peek.c \
-		rb_push_back.c \
-		rb_pop_front.c
+		rb_peek.c
 
 OBJ := $(OBJ) $(RB:.c=.o)
 

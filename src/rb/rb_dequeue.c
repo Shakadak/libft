@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb_append.c                                        :+:      :+:    :+:   */
+/*   rb_pop_front.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/06/03 11:50:34 by npineau           #+#    #+#             */
-/*   Updated: 2015/06/03 11:53:04 by npineau          ###   ########.fr       */
+/*   Created: 2016/06/01 14:17:01 by npineau           #+#    #+#             */
+/*   Updated: 2016/06/01 14:17:09 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	rb_append(t_rb *const rb, char const c)
+int	rb_dequeue(t_rb *rb, void **item)
 {
-	if (rb_full(*rb))
-		return (0);
-	rb->tail = (rb->tail + 1) % rb->size;
-	rb->buffer[rb->tail] = c;
-	rb->used += 1;
-	return (1);
+	int	rv;
+
+	if ((rv = !rb_empty(*rb)))
+	{
+		*item = ft_memdup(rb->head, rb->esize);
+		if (*item != NULL)
+		{
+			rb->head += rb->esize;
+			if (rb->head == (rb->buffer + rb->capacity * rb->esize))
+			{
+				rb->head = rb->buffer;
+			}
+		}
+		else
+		{
+			rv = 0;
+		}
+	}
+	return (rv);
 }
