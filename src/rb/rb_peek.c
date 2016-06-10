@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   msc.h                                              :+:      :+:    :+:   */
+/*   rb_peek.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/06 12:25:13 by npineau           #+#    #+#             */
-/*   Updated: 2016/06/06 12:25:15 by npineau          ###   ########.fr       */
+/*   Created: 2015/06/02 17:15:09 by npineau           #+#    #+#             */
+/*   Updated: 2015/06/02 17:25:28 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MSC_H
-# define MSC_H
+#include "libft.h"
 
-typedef struct	s_pair
+int	rb_peek(t_rb const rb, void **item)
 {
-	void	*first;
-	void	*second;
-}				t_pair;
-
-void			*fst(t_pair pair);
-void			*snd(t_pair pair);
-t_pair			pair(void *first, void *second);
-
-int				imin(int l, int r);
-int				imax(int l, int r);
-
-#endif
+	if (rb_empty(rb))
+	{
+		return (0);
+	}
+	else
+	{
+		*item = rb.head;
+		return (1);
+	}
+}

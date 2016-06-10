@@ -22,6 +22,7 @@ DIRLST		:=	$(DIRSRC)/list
 DIRMEM		:=	$(DIRSRC)/memory
 DIRMSC		:=	$(DIRSRC)/misc
 DIRIO		:=	$(DIRSRC)/io
+DIRRB		:=	$(DIRSRC)/rb
 DIRSTR		:=	$(DIRSRC)/string
 DIRINC		:=	inc
 
@@ -35,6 +36,7 @@ include $(DIRLST)/sources.mk
 include $(DIRMEM)/sources.mk
 include $(DIRMSC)/sources.mk
 include $(DIRIO)/sources.mk
+include $(DIRRB)/sources.mk
 include $(DIRSTR)/sources.mk
 
 ### FILES: PATHS ###

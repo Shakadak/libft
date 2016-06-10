@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   msc.h                                              :+:      :+:    :+:   */
+/*   rb_drop_n.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/06 12:25:13 by npineau           #+#    #+#             */
-/*   Updated: 2016/06/06 12:25:15 by npineau          ###   ########.fr       */
+/*   Created: 2016/06/09 15:59:00 by npineau           #+#    #+#             */
+/*   Updated: 2016/06/09 15:59:02 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MSC_H
-# define MSC_H
+#include "libft.h"
 
-typedef struct	s_pair
+int	rb_drop_n(t_rb *rb, size_t n)
 {
-	void	*first;
-	void	*second;
-}				t_pair;
-
-void			*fst(t_pair pair);
-void			*snd(t_pair pair);
-t_pair			pair(void *first, void *second);
-
-int				imin(int l, int r);
-int				imax(int l, int r);
-
-#endif
+	n = (n > rb->used ? rb->used : n);
+	if (rb->head > rb->tail)
+	{
+		rb->head += n * rb->esize;
+		if (rb->head >= rb->buffer + rb->capacity * rb->esize)
+		{
+			rb->head = rb->buffer
+				+ (rb->head - rb->buffer + rb->capacity * rb->esize);
+		}
+	}
+	else
+	{
+		rb->head += n * rb->esize;
+	}
+	return (1);
+}

@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   msc.h                                              :+:      :+:    :+:   */
+/*   rb_empty.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/06 12:25:13 by npineau           #+#    #+#             */
-/*   Updated: 2016/06/06 12:25:15 by npineau          ###   ########.fr       */
+/*   Created: 2015/05/23 09:40:38 by npineau           #+#    #+#             */
+/*   Updated: 2015/05/23 09:40:41 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MSC_H
-# define MSC_H
+#include "libft.h"
 
-typedef struct	s_pair
+int	rb_empty(t_rb const rb)
 {
-	void	*first;
-	void	*second;
-}				t_pair;
-
-void			*fst(t_pair pair);
-void			*snd(t_pair pair);
-t_pair			pair(void *first, void *second);
-
-int				imin(int l, int r);
-int				imax(int l, int r);
-
-#endif
+	return (rb.used == 0);
+}
