@@ -16,7 +16,7 @@
 # include <stddef.h>
 # include "list.h"
 
-typedef struct		s_list	t_list;
+typedef struct s_list	t_list;
 
 typedef struct		s_arr
 {
