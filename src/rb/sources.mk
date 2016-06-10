@@ -3,6 +3,7 @@ RB	:=	rb_dequeue.c \
 		rb_dup.c \
 		rb_empty.c \
 		rb_enqueue.c \
+		rb_force_enqueue.c \
 		rb_free.c \
 		rb_full.c \
 		rb_new.c \

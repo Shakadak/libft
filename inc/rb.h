@@ -26,6 +26,7 @@ typedef struct	s_rb
 }				t_rb;
 
 int				rb_enqueue(t_rb *rb, void const *src);
+int				rb_force_enqueue(t_rb *rb, void (*del)(void*), void const *src);
 int				rb_dequeue(t_rb *rb, void **item);
 int				rb_dup(t_rb const src, t_rb *slot);
 int				rb_empty(t_rb const buff);
