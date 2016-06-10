@@ -12,21 +12,17 @@
 
 #include "libft.h"
 
-int	rb_drop_n(t_rb *rb, size_t n)
+int	rb_drop_n(t_rb *rb, void (*del)(void*), size_t n)
 {
-	n = (n > rb->used ? rb->used : n);
-	if (rb->head > rb->tail)
+	while (n > 0)
 	{
-		rb->head += n * rb->esize;
-		if (rb->head >= rb->buffer + rb->capacity * rb->esize)
+		del(rb->head);
+		rb->head += rb->esize;
+		if (rb->head == (rb->buffer + rb->capacity * rb->esize))
 		{
-			rb->head = rb->buffer
-				+ (rb->head - rb->buffer + rb->capacity * rb->esize);
+			rb->head = rb->buffer;
 		}
-	}
-	else
-	{
-		rb->head += n * rb->esize;
+		n -= 1;
 	}
 	return (1);
 }
