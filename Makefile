@@ -54,7 +54,7 @@ AR_EXEC		=	$(AR) $(AR_FLAG) $@ $^
 
 C_FLAG		:=	-Wall -Wextra -Werror
 O_FLAG		:=	-O3
-C_OPT		=	-o $@ -c $< -I $(DIRINC)
+C_OPT		=	-o $@ -c $< -I $(DIRINC) -I .
 COMPIL		=	$(CC) $(C_FLAG) $(O_FLAG) $(C_OPT)
 
 ### RULES ###
