@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "inc/libft.h"
 
 int	rb_drop_n(t_rb *rb, void (*del)(void*), size_t n)
 {
-	while (n > 0)
+	while (n > 0 && rb->used > 0)
 	{
 		del(rb->head);
 		rb->head += rb->esize;
@@ -22,6 +22,7 @@ int	rb_drop_n(t_rb *rb, void (*del)(void*), size_t n)
 		{
 			rb->head = rb->buffer;
 		}
+		rb->used -= 1;
 		n -= 1;
 	}
 	return (1);
