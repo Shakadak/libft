@@ -14,9 +14,9 @@
 # define ARR_H
 
 # include <stddef.h>
-# include "list.h"
+# include "lst.h"
 
-typedef struct s_list	t_list;
+typedef struct s_lst	t_lst;
 
 typedef struct		s_arr
 {
@@ -25,7 +25,7 @@ typedef struct		s_arr
 	char			cell;
 }					t_arr;
 
-t_list				*ft_arr2lst(const t_arr *arr);
+t_lst				*ft_arr2lst(const t_arr *arr);
 size_t				ft_arrcapacity(const t_arr *arr);
 size_t				ft_arrused(const t_arr *arr);
 t_arr				*ft_arrnew(size_t l);

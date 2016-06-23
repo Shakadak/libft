@@ -15,13 +15,12 @@
 
 # include <string.h>
 # include "arr.h"
-# include "list.h"
 # include "char.h"
 # include "io.h"
-# include "list.h"
+# include "lst.h"
 # include "mem.h"
+# include "msc.h"
 # include "rb.h"
 # include "str.h"
-# include "msc.h"
 
 #endif

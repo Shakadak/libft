@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst2arr.c                                       :+:      :+:    :+:   */
+/*   ft_lstapp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/14 14:30:24 by npineau           #+#    #+#             */
-/*   Updated: 2016/05/14 14:30:26 by npineau          ###   ########.fr       */
+/*   Created: 2016/05/12 11:57:43 by npineau           #+#    #+#             */
+/*   Updated: 2016/05/12 11:57:50 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
-#include "arr.h"
-#include "mem.h"
+#include "inc/lst.h"
 
-t_arr	*ft_lst2arr(const t_list *lst)
+void	ft_lstapp(t_lst *lst, t_lst *node)
 {
-	t_arr	*arr;
-	t_list	*l;
-	size_t	i;
-
-	arr = ft_arrnew(ft_lstlen(lst));
-	if (arr)
+	if (lst)
 	{
-		i = 0;
-		l = (t_list *)lst;
-		while (l)
+		if (!lst->next)
 		{
-			arr[i].content = ft_memdup(l->content, l->content_size);
-			arr[i].size = l->content_size;
-			l = l->next;
+			lst->next = node;
+		}
+		else
+		{
+			ft_lstapp(lst->next, node);
 		}
 	}
-	return (arr);
 }

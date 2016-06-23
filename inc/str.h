@@ -17,7 +17,7 @@
 
 # include <stddef.h>
 # include "msc.h"
-# include "list.h"
+# include "lst.h"
 
 int					ft_isx(char *str, int (*is)(int));
 size_t				ft_array_len(char const *const *const array);
@@ -54,6 +54,6 @@ char				*ft_strndup(size_t n, const char *src);
 size_t				ft_strnlen(size_t n, const char *str);
 t_pair				strspan(int (*p)(char), const char *str);
 t_pair				strbreak(int (*p)(char), const char *str);
-t_list				*split_when(int (*p)(char), const char *str);
+t_lst				*split_when(int (*p)(char), const char *str);
 
 #endif

@@ -1,45 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/30 16:48:17 by npineau           #+#    #+#             */
-/*   Updated: 2015/01/06 17:37:12 by npineau          ###   ########.fr       */
+/*   Created: 2013/11/30 12:03:09 by npineau           #+#    #+#             */
+/*   Updated: 2014/05/06 13:02:24 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "list.h"
+#include "inc/lst.h"
+#include "inc/mem.h"
 
-static void	ft_elemdel(void *content, size_t size)
+t_lst	*ft_lstnew(const void *content, size_t content_size)
 {
-	(void)size;
-	free(content);
-}
+	t_lst	*new;
 
-t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
-{
-	t_list	*new;
-	t_list	*mod;
-
-	new = NULL;
-	if (lst)
+	new = (t_lst *)malloc(sizeof(t_lst));
+	if (!new)
+		return (NULL);
+	ft_bzero(new, sizeof(new));
+	if (content)
 	{
-		mod = f(lst);
-		if (mod)
+		new->content = malloc(content_size);
+		if (!new->content)
 		{
-			new = ft_lstnew(mod->content, mod->content_size);
-			if (!new)
-				return (NULL);
-			if (lst->next)
-			{
-				new->next = ft_lstmap(lst->next, f);
-				if (new->next == NULL)
-					ft_lstdel(&new, &ft_elemdel);
-			}
+			free(new);
+			return (NULL);
 		}
+		new->content = ft_memcpy(new->content, content, content_size);
+		new->content_size = content_size;
 	}
 	return (new);
 }

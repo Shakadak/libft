@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lst2arr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/30 16:37:42 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/06 13:01:48 by npineau          ###   ########.fr       */
+/*   Created: 2016/05/14 14:30:24 by npineau           #+#    #+#             */
+/*   Updated: 2016/05/14 14:30:26 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#include "inc/lst.h"
+#include "inc/arr.h"
+#include "inc/mem.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+t_arr	*ft_lst2arr(const t_lst *lst)
 {
-	if (lst)
+	t_arr		*arr;
+	t_lst const	*l;
+	size_t		i;
+
+	arr = ft_arrnew(ft_lstlen(lst));
+	if (arr)
 	{
-		f(lst);
-		if (lst->next)
-			ft_lstiter(lst->next, f);
+		i = 0;
+		l = lst;
+		while (l)
+		{
+			arr[i].content = ft_memdup(l->content, l->content_size);
+			arr[i].size = l->content_size;
+			l = l->next;
+		}
 	}
+	return (arr);
 }

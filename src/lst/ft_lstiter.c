@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/14 14:40:34 by npineau           #+#    #+#             */
-/*   Updated: 2016/05/14 14:40:36 by npineau          ###   ########.fr       */
+/*   Created: 2013/11/30 16:37:42 by npineau           #+#    #+#             */
+/*   Updated: 2014/05/06 13:01:48 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#include "inc/lst.h"
 
-size_t	ft_lstlen(const t_list *lst)
+void	ft_lstiter(t_lst *lst, void (*f)(t_lst *elem))
 {
-	t_lst	*l;
-	size_t	i;
-
-	i = 0;
-	l = lst;
-	while (l)
+	if (lst)
 	{
-		i += 1;
-		l = l->next;
+		f(lst);
+		if (lst->next)
+			ft_lstiter(lst->next, f);
 	}
-	return (i);
 }

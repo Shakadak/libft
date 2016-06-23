@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list.h                                             :+:      :+:    :+:   */
+/*   lst.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,29 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIST_H
-# define LIST_H
+#ifndef LST_H
+# define LST_H
 
 # include <stddef.h>
 # include "arr.h"
 
 typedef struct s_arr	t_arr;
 
-typedef struct		s_list
+typedef struct		s_lst
 {
 	void			*content;
 	size_t			content_size;
-	struct s_list	*next;
-}					t_list;
+	struct s_lst	*next;
+}					t_lst;
 
-t_list				*ft_lstnew(const void *content, size_t content_size);
-void				ft_lstdelone(t_list **alst, void (*del)());
-void				ft_lstdel(t_list **alst, void (*del)());
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstapp(t_list *lst, t_list *node);
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-size_t				ft_lstlen(const t_list *lst);
-t_arr				*ft_lst2arr(const t_list *lst);
+t_arr				*ft_lst2arr(const t_lst *lst);
+void				ft_lstadd(t_lst **alst, t_lst *new);
+void				ft_lstapp(t_lst *lst, t_lst *node);
+void				ft_lstdelone(t_lst **alst, void (*del)());
+void				ft_lstdel(t_lst **alst, void (*del)());
+t_lst				*ft_lstind(t_lst *lst, size_t index);
+void				ft_lstiter(t_lst *lst, void (*f)(t_lst *elem));
+size_t				ft_lstlen(const t_lst *lst);
+t_lst				*ft_lstmap(t_lst *lst, t_lst *(*f)(t_lst *elem));
+t_lst				*ft_lstnew(const void *content, size_t content_size);
 
 #endif

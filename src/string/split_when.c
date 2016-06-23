@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "list.h"
-#include "str.h"
+#include "inc/lst.h"
+#include "inc/str.h"
 
-t_list	*split_when(int (*p)(char), const char *str)
+t_lst	*split_when(int (*p)(char), const char *str)
 {
 	t_pair	t1;
 	t_pair	t2;
-	t_list	*h;
+	t_lst	*h;
 
 	if (!str)
 		return (NULL);

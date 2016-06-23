@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/30 14:39:45 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/06 13:01:37 by npineau          ###   ########.fr       */
+/*   Created: 2016/05/14 14:40:34 by npineau           #+#    #+#             */
+/*   Updated: 2016/05/14 14:40:36 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#include "inc/lst.h"
 
-void	ft_lstdel(t_list **alst, void (*del)())
+size_t	ft_lstlen(const t_lst *lst)
 {
-	if (alst && del)
+	const t_lst	*l;
+	size_t		i;
+
+	i = 0;
+	l = lst;
+	while (l)
 	{
-		if ((*alst)->next)
-			ft_lstdel(&((*alst)->next), del);
-		ft_lstdelone(alst, del);
+		i += 1;
+		l = l->next;
 	}
+	return (i);
 }

@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/30 14:57:19 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/06 13:01:25 by npineau          ###   ########.fr       */
+/*   Created: 2013/11/30 14:39:45 by npineau           #+#    #+#             */
+/*   Updated: 2014/05/06 13:01:37 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#include "inc/lst.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_lstdel(t_lst **alst, void (*del)())
 {
-	if (alst && new)
+	if (alst && del)
 	{
-		new->next = *alst;
-		*alst = new;
+		if ((*alst)->next)
+			ft_lstdel(&((*alst)->next), del);
+		ft_lstdelone(alst, del);
 	}
 }
