@@ -13,6 +13,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# define BUFF_SIZE 4096
+
 # include <string.h>
 # include "arr.h"
 # include "char.h"

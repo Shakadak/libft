@@ -13,8 +13,6 @@
 #ifndef STR_H
 # define STR_H
 
-# define BUFF_SIZE 32
-
 # include <stddef.h>
 # include "msc.h"
 # include "lst.h"

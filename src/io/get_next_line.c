@@ -10,131 +10,64 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "inc/libft.h"
 #include <unistd.h>
 #include <stdlib.h>
 
-/*
-** Each and every function in this file return an integer, in order to exit.
-** Whether to return an error or that the line is completed.
-*/
-
-/*
-** ft_read_txt use read in a loop and copy what's in the buffer to *line,
-** using ft_cp_buff. Whenever ft_check_line return 1 or -1, it exit the loop.
-*/
-
-/*
-** ft_cp_buff copy what's in the buffer to a temporary string, stopping when
-** encountering a \n or when reaching the end of the buffer.
-** It then join the current line with the temporary string.
-** Because of the behavior of ft_strjoin, the address of *line must be stored
-** premptively to be able to free after, as it return a new string.
-** The temporary string is freed as well.
-*/
-
-/*
-** ft_init_line check if *line does exist. If that's the case, it clear it,
-** otherwise it create a new one of size 0 (Actually of size 1 to place a \0).
-** Note that it's the responsibility of the user to give an allocated pointer
-** if *line isn't NULL, as there is no way to check if the adress point to
-** allocated memory.
-*/
-
-/*
-** ft_check_line verify if a \n is present in the buffer. If that's the case,
-** it "move" the start of the buffer after the \n, otherwise, it clear
-** enirely the buffer.
-*/
-
-static int	ft_cp_buff(char **line, char *buff)
+static int      malloc_more(char **buf, int size)
 {
-	char	*c;
-	char	*tmp;
-	int		len;
+	int     i;
+	char    *tmp;
 
-	len = ft_strlen(buff);
-	tmp = ft_strnew(len);
-	if (!tmp)
-		return (-1);
-	ft_memccpy(tmp, buff, '\n', len);
-	c = ft_strchr(tmp, '\n');
-	if (c)
-		*c = '\0';
-	c = *line;
-	*line = ft_strjoin(*line, tmp);
-	ft_strdel(&c);
-	ft_strdel(&tmp);
-	if (!*line)
-		return (-1);
+	tmp = *buf;
+	*buf = malloc(sizeof(char) * (ft_strlen(tmp) + size + 1));
+	i = -1;
+	while (tmp[++i] != '\0')
+		(*buf)[i] = tmp[i];
+	(*buf)[i] = '\0';
+	free(tmp);
+	return (i);
+}
+
+static int      get_part(char **buf, char **line)
+{
+	char    *tmp;
+	int     i;
+
+	i = 0;
+	tmp = *buf;
+	while (tmp[i] != '\0' && tmp[i] != '\n')
+		i++;
+	if (tmp[i] != '\n')
+		return (0);
+	tmp[i] = '\0';
+	*line = ft_strdup(*buf);
+	*buf = ft_strdup(*buf + i + 1);
+	free(tmp);
 	return (1);
 }
 
-static int	ft_init_line(char **line)
+int             get_next_line(int const fd, char **line)
 {
-	*line = ft_strnew(0);
-	if (!*line)
-		return (-1);
-	return (0);
-}
+	static char     *buf = NULL;
+	int             ret;
+	int             i;
+	static int      real = 1;
 
-static int	ft_check_line(char *buff)
-{
-	char	*str;
-
-	if ((str = ft_strchr(buff, '\n')))
-	{
-		ft_strcpy(buff, (str + 1));
-		return (1);
-	}
-	ft_strclr(buff);
-	return (0);
-}
-
-static int	ft_read_txt(int fd, char **line, char *buff)
-{
-	int	res;
-	int	ret;
-
-	while ((res = read(fd, buff, BUFF_SIZE)) > 0)
-	{
-		buff[res] = '\0';
-		ret = ft_cp_buff(line, buff);
-		if (ret == -1)
-			return (-1);
-		if (ft_check_line(buff))
-			return (1);
-	}
-	if (res == 0)
-	{
-		if (ft_strlen(*line))
-			return (1);
+	if (!real)
 		return (0);
-	}
-	return (-1);
-}
-
-int			get_next_line(int const fd, char **line)
-{
-	int			ret;
-	static char	buff[BUFF_SIZE + 1];
-
-	ret = ft_init_line(line);
+	if (buf == NULL)
+		buf = ft_strdup("");
+	if (get_part(&buf, line))
+		return (1);
+	i = malloc_more(&buf, BUFF_SIZE);
+	ret = read(fd, buf + i, BUFF_SIZE);
 	if (ret == -1)
 		return (-1);
-	if (ft_strlen(buff))
-	{
-		ret = ft_cp_buff(line, buff);
-		if (ret == -1)
-			return (-1);
-		if (ft_check_line(buff))
-			return (1);
-	}
-	ret = ft_read_txt(fd, line, buff);
-	if (ret == -1)
-		return (-1);
-	else if (ret == 0)
-		return (0);
-	else
-		return (1);
+	buf[i + ret] = '\0';
+	if (ret != 0)
+		return (get_next_line(fd, line));
+	*line = ft_strdup(buf);
+	free(buf);
+	return (real--);
 }
