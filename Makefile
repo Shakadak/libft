@@ -52,6 +52,7 @@ AR_EXEC		=	$(AR) $(AR_FLAG) $@ $^
 
 ### COMPILATION ###
 
+CC			:=	clang
 C_FLAG		:=	-Wall -Wextra -Werror
 O_FLAG		:=	-O3
 C_OPT		=	-o $@ -c $< -I $(DIRINC) -I .

@@ -4,6 +4,7 @@ CHR	:= ft_atof.c \
 	ft_isalpha.c \
 	ft_isascii.c \
 	ft_isdigit.c \
+	ft_isoneof.c \
 	ft_isprint.c \
 	ft_isspace.c \
 	ft_itoa.c \
