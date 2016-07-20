@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "str.h"
+#include "inc/str.h"
 
 char	*ft_strndup(size_t n, const char *src)
 {
@@ -20,17 +20,14 @@ char	*ft_strndup(size_t n, const char *src)
 
 	copy = NULL;
 	len = ft_strnlen(n, src);
-	if (len != 0)
+	copy = (char *)malloc((1 + len) * sizeof(char));
+	if (copy != NULL)
 	{
-		copy = (char *)malloc((1 + len) * sizeof(char));
-		if (copy != NULL)
+		copy[len] = 0;
+		while (len > 0)
 		{
-			copy[len] = 0;
-			while (len > 0)
-			{
-				len -= 1;
-				copy[len] = src[len];
-			}
+			len -= 1;
+			copy[len] = src[len];
 		}
 	}
 	return (copy);

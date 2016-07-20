@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "inc/libft.h"
 
 /*
 ** Utility allocating new array of char, adding space for the terminating byte.
@@ -23,8 +23,6 @@ char	*ft_strnew(size_t size)
 {
 	char	*str;
 
-	if (size == 0)
-		return (NULL);
 	str = (char *)malloc(sizeof(char) * (size + 1));
 	if (str)
 		ft_bzero(str, size + 1);
