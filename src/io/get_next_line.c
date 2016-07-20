@@ -14,10 +14,10 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-static int      malloc_more(char **buf, int size)
+static int	malloc_more(char **buf, int size)
 {
-	int     i;
-	char    *tmp;
+	int		i;
+	char	*tmp;
 
 	tmp = *buf;
 	*buf = malloc(sizeof(char) * (ft_strlen(tmp) + size + 1));
@@ -29,10 +29,10 @@ static int      malloc_more(char **buf, int size)
 	return (i);
 }
 
-static int      get_part(char **buf, char **line)
+static int	get_part(char **buf, char **line)
 {
-	char    *tmp;
-	int     i;
+	char	*tmp;
+	int		i;
 
 	i = 0;
 	tmp = *buf;
@@ -47,12 +47,12 @@ static int      get_part(char **buf, char **line)
 	return (1);
 }
 
-int             get_next_line(int const fd, char **line)
+int			get_next_line(int const fd, char **line)
 {
-	static char     *buf = NULL;
-	int             ret;
-	int             i;
-	static int      real = 1;
+	static char	*buf = NULL;
+	int			ret;
+	int			i;
+	static int	real = 1;
 
 	if (!real)
 		return (0);
