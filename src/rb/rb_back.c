@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb_drop_n.c                                        :+:      :+:    :+:   */
+/*   rb_back.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/09 15:59:00 by npineau           #+#    #+#             */
-/*   Updated: 2017/10/17 15:09:11 by npineau          ###   ########.fr       */
+/*   Created: 2017/10/17 12:50:05 by npineau           #+#    #+#             */
+/*   Updated: 2017/10/17 15:00:17 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/libft.h"
+#include "inc/rb.h"
 
-int	rb_drop_n(t_rb *rb, void (*del)(void*), size_t n)
+void	*rb_back(t_rb const rb)
 {
-	while (n > 0 && rb->used > 0)
-	{
-		del(rb->head);
-		if (rb->head == rb->b_end)
-		{
-			rb->head = rb->b_start;
-		}
-		else
-		{
-			rb->head += rb->esize;
-		}
-		rb->used -= 1;
-		n -= 1;
-	}
-	return (1);
+	return (rb_empty(rb) ? NULL : rb.tail);
 }

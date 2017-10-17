@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:41:31 by npineau           #+#    #+#             */
-/*   Updated: 2015/06/02 17:02:49 by npineau          ###   ########.fr       */
+/*   Updated: 2017/10/17 15:12:14 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,16 @@ int	rb_new(size_t const capacity, size_t const esize, t_rb *slot)
 	int		rv;
 
 	rv = 0;
-	slot->buffer = malloc(esize * capacity);
+	slot->b_start = malloc(esize * capacity);
 	slot->used = 0;
-	if (slot->buffer != NULL)
+	if (slot->b_start != NULL)
 	{
-		ft_bzero(slot->buffer, esize * capacity);
-		slot->head = slot->buffer;
-		slot->tail = slot->buffer;
+		ft_bzero(slot->b_start, esize * capacity);
+		slot->head = slot->b_start;
+		slot->tail = slot->b_start;
 		slot->capacity = capacity;
 		slot->esize = esize;
+		slot->b_end = slot->b_start + (capacity - 1) * esize;
 		rv = 1;
 	}
 	else

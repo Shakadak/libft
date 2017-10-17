@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:40:48 by npineau           #+#    #+#             */
-/*   Updated: 2015/05/23 09:40:49 by npineau          ###   ########.fr       */
+/*   Updated: 2017/10/17 15:14:30 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 void	rb_free(t_rb *rb)
 {
-	free(rb->buffer);
+	free(rb->b_start);
 	ft_bzero(rb, sizeof(t_rb));
 }

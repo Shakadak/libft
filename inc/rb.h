@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:39:35 by npineau           #+#    #+#             */
-/*   Updated: 2017/10/17 13:28:06 by npineau          ###   ########.fr       */
+/*   Updated: 2017/10/17 14:53:33 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 
 typedef struct	s_rb
 {
-	uint8_t		*buffer;
+	uint8_t		*b_start;
+	uint8_t		*b_end;
 	size_t		capacity;
 	size_t		esize;
 	size_t		used;
@@ -26,15 +27,21 @@ typedef struct	s_rb
 	uint8_t		*tail;
 }				t_rb;
 
-int				rb_enqueue(t_rb *rb, void const *src);
-int				rb_force_enqueue(t_rb *rb, void (*del)(void*), void const *src);
+void			*rb_back(t_rb const rb);
 int				rb_dequeue(t_rb *rb, void **item);
+int				rb_drop_n(t_rb *rb, void (*del)(void*), size_t n);
 int				rb_dup(t_rb const src, t_rb *slot);
 int				rb_empty(t_rb const buff);
+int				rb_enqueue(t_rb *rb, void const *src);
+int				rb_force_enqueue(t_rb *rb, void (*del)(void*), void const *src);
 void			rb_free(t_rb *rb);
+void			*rb_front(t_rb const rb);
 int				rb_full(t_rb const rb);
 int				rb_new(size_t const capacity, size_t esize, t_rb *slot);
 int				rb_peek(t_rb const rb, void **item);
-int				rb_drop_n(t_rb *rb, void (*del)(void*), size_t n);
+int				rb_pop_back(t_rb *rb, void *item);
+int				rb_pop_front(t_rb *rb, void *item);
+int				rb_push_back(t_rb *rb, void const *src);
+int				rb_push_front(t_rb *rb, void const *src);
 
 #endif
