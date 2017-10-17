@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:39:35 by npineau           #+#    #+#             */
-/*   Updated: 2016/06/06 12:25:27 by npineau          ###   ########.fr       */
+/*   Updated: 2017/10/17 13:28:06 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 # define RB_H
 
 # include <unistd.h>
+# include <stdint.h>
 
 typedef struct	s_rb
 {
-	void		*buffer;
+	uint8_t		*buffer;
 	size_t		capacity;
 	size_t		esize;
 	size_t		used;
-	void		*head;
-	void		*tail;
+	uint8_t		*head;
+	uint8_t		*tail;
 }				t_rb;
 
 int				rb_enqueue(t_rb *rb, void const *src);
