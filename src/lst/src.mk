@@ -10,5 +10,5 @@ LST	:= ft_lstadd.c \
 
 OBJ := $(OBJ) $(LST:.c=.o)
 
-$(DIROBJ)/%.o: $(DIRLST)/%.c $(INC)
+$(DIROBJ)/%.o: $(DIRSRC)/lst/%.c $(INC)
 	$(COMPIL)

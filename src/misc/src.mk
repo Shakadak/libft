@@ -5,5 +5,5 @@ MSC	:=\
 
 OBJ := $(OBJ) $(MSC:.c=.o)
 
-$(DIROBJ)/%.o: $(DIRMSC)/%.c $(INC)
+$(DIROBJ)/%.o: $(DIRSRC)/misc/%.c $(INC)
 	$(COMPIL)

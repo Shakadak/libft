@@ -17,5 +17,5 @@ RB	:=	rb_back.c \
  
 OBJ := $(OBJ) $(RB:.c=.o)
 
-$(DIROBJ)/%.o: $(DIRRB)/%.c $(INC)
+$(DIROBJ)/%.o: $(DIRSRC)/rb/%.c $(INC)
 	$(COMPIL)

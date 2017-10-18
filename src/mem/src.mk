@@ -12,5 +12,5 @@ MEM := ft_freesplit.c \
 
 OBJ := $(OBJ) $(MEM:.c=.o)
 
-$(DIROBJ)/%.o: $(DIRMEM)/%.c $(INC)
+$(DIROBJ)/%.o: $(DIRSRC)/mem/%.c $(INC)
 	$(COMPIL)

@@ -3,5 +3,5 @@ ARR	:=	ft_arrlen.c \
 
 OBJ := $(OBJ) $(ARR:.c=.o)
 
-$(DIROBJ)/%.o: $(DIRARR)/%.c $(INC)
+$(DIROBJ)/%.o: $(DIRSRC)/arr/%.c $(INC)
 	$(COMPIL)

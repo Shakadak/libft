@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/17 13:44:00 by npineau           #+#    #+#             */
-/*   Updated: 2017/10/17 14:50:08 by npineau          ###   ########.fr       */
+/*   Updated: 2017/10/18 10:02:40 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ static void	*mmemcpy(void *out, const void *in, size_t len)
 int			rb_push_front(t_rb *rb, void const *src)
 {
 	int		rv;
-	uint8_t	*head;
 
 	if ((rv = !rb_full(*rb)))
 	{

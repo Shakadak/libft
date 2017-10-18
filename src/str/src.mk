@@ -34,5 +34,5 @@ STR	:=	ft_isx.c \
 
 OBJ := $(OBJ) $(STR:.c=.o)
 
-$(DIROBJ)/%.o: $(DIRSTR)/%.c $(INC)
+$(DIROBJ)/%.o: $(DIRSRC)/str/%.c $(INC)
 	$(COMPIL)
