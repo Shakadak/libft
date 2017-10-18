@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 11:59:32 by npineau           #+#    #+#             */
-/*   Updated: 2016/05/12 11:59:35 by npineau          ###   ########.fr       */
+/*   Updated: 2017/10/18 15:00:25 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ t_lst	*split_when(int (*p)(char), const char *str)
 
 	if (!str)
 		return (NULL);
-	t1 = strspan(p, str);
+	t1 = strbreak(p, str);
 	free(fst(t1));
 	if (snd(t1) == NULL)
 		return (NULL);
-	t2 = strbreak(p, snd(t1));
+	t2 = strspan(p, snd(t1));
 	h = ft_lstnew(fst(t2), ft_strlen(fst(t2)));
 	free(snd(t1));
 	free(fst(t2));
