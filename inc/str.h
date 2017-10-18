@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 16:29:59 by npineau           #+#    #+#             */
-/*   Updated: 2015/05/21 18:02:08 by npineau          ###   ########.fr       */
+/*   Updated: 2017/10/18 15:14:09 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strcpy(char *copy, const char *src);
+int					ft_strempty(char const *const src);
 char				*ft_strncpy(char *copy, const char *src, size_t n);
 char				*ft_strstr(const char *dest, const char *mod);
 char				*ft_strnstr(const char *dest, const char *mod, size_t n);
