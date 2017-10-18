@@ -6,13 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 17:38:53 by npineau           #+#    #+#             */
-/*   Updated: 2014/02/05 11:59:25 by npineau          ###   ########.fr       */
+/*   Updated: 2017/10/18 15:28:04 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+int	ft_isascii(char c)
 {
-	if (0 <= c && c <= 127)
-		return (1);
-	return (0);
+	return (0 <= c && c <= 127);
 }

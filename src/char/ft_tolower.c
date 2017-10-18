@@ -6,11 +6,11 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 18:13:23 by npineau           #+#    #+#             */
-/*   Updated: 2014/02/05 12:08:55 by npineau          ###   ########.fr       */
+/*   Updated: 2017/10/18 15:29:16 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+int	ft_tolower(char c)
 {
-	return (c += (('A' <= c && c <= 'Z') ? 32 : 0));
+	return (c + (('A' <= c && c <= 'Z') ? 32 : 0));
 }
