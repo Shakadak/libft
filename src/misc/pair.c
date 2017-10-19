@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 12:00:06 by npineau           #+#    #+#             */
-/*   Updated: 2016/05/12 12:00:09 by npineau          ###   ########.fr       */
+/*   Updated: 2017/10/19 10:51:15 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ t_pair	pair(void *f, void *s)
 
 void	*fst(t_pair p)
 {
-	return (p.first);
+	return (p.fst);
 }
 
 void	*snd(t_pair p)
 {
-	return (p.second);
+	return (p.snd);
 }
