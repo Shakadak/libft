@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/17 13:44:00 by npineau           #+#    #+#             */
-/*   Updated: 2017/10/19 13:26:42 by mde-jesu         ###   ########.fr       */
+/*   Updated: 2017/10/23 15:20:50 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ int			rb_push_front(t_rb *rb, void const *src)
 	{
 		if (rb->used != 0)
 		{
-			rb->head = (rb->head == rb->b_start ? rb->b_end : rb->head - rb->esize);
+			rb->head = (rb->head == rb->b_start ?
+					rb->b_end :
+					rb->head - rb->esize);
 		}
 		mmemcpy(rb->head, src, rb->esize);
 		rb->used += 1;
