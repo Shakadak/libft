@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 10:29:40 by npineau           #+#    #+#             */
-/*   Updated: 2017/10/18 13:42:39 by npineau          ###   ########.fr       */
+/*   Updated: 2017/10/23 12:21:49 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ t_rb		*rb_resize(t_rb *rb, size_t capacity)
 	rb_new(capacity, rb->esize, &dup);
 	while (!rb_full(dup) && !rb_empty(*rb))
 	{
-		rb_pop_front(&dup, item);
-		rb_push_back(rb, item);
+		rb_pop_front(rb, item);
+		rb_push_back(&dup, item);
 	}
 	free(item);
-	free(dup.b_start);
+	free(rb->b_start);
+	*rb = dup;
 	return (rb);
 }
