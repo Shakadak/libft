@@ -10,6 +10,8 @@ RB	:=	rb_back.c \
 		rb_free.c \
 		rb_front.c \
 		rb_full.c \
+		rb_grow_push_back.c \
+		rb_grow_push_front.c \
 		rb_index.c \
 		rb_new.c \
 		rb_peek.c \
@@ -21,5 +23,5 @@ RB	:=	rb_back.c \
  
 OBJ := $(OBJ) $(RB:.c=.o)
 
-$(DIROBJ)/%.o: $(DIRSRC)/rb/%.c $(INC)
+$(DIROBJ)/%.o: $(DIRSRC)/rb/%.c $(INC) $(DIRINC)/rb.h
 	$(COMPIL)

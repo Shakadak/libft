@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb_resize.c                                        :+:      :+:    :+:   */
+/*   rb_grow_push_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/18 10:29:40 by npineau           #+#    #+#             */
-/*   Updated: 2017/10/25 12:05:52 by npineau          ###   ########.fr       */
+/*   Created: 2017/10/25 12:02:40 by npineau           #+#    #+#             */
+/*   Updated: 2017/10/25 12:28:12 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "inc/rb.h"
 
-t_rb		*rb_resize(t_rb *rb, size_t capacity)
+int	rb_grow_push_back(t_rb *rb, void const *elem)
 {
-	t_rb	dup;
-	void	*item;
+	int	check;
 
-	if (rb->capacity != capacity)
+	if (rb_full(*rb))
 	{
-		item = malloc(rb->esize);
-		rb_new(capacity, rb->esize, &dup);
-		while (!rb_full(dup) && !rb_empty(*rb))
-		{
-			rb_pop_front(rb, item);
-			rb_push_back(&dup, item);
-		}
-		free(item);
-		free(rb->b_start);
-		*rb = dup;
+		check = rb_push_back(rb_resize(rb, rb->capacity * 2), elem);
 	}
-	return (rb);
+	else
+	{
+		check = rb_push_back(rb, elem);
+	}
+	return (check);
 }
