@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:39:35 by npineau           #+#    #+#             */
-/*   Updated: 2017/10/25 12:32:49 by npineau          ###   ########.fr       */
+/*   Updated: 2017/10/25 12:41:21 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void			rb_free(t_rb *rb);
 void			*rb_front(t_rb rb);
 int				rb_full(t_rb rb);
 int				rb_grow_push_back(t_rb *rb, void const *elem);
+int				rb_grow_push_front(t_rb *rb, void const *elem);
 void			*rb_index(t_rb rb, size_t i);
 int				rb_new(size_t capacity, size_t esize, t_rb *slot);
 int				rb_peek(t_rb rb, void **item);
