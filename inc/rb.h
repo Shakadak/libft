@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:39:35 by npineau           #+#    #+#             */
-/*   Updated: 2017/10/23 12:14:46 by npineau          ###   ########.fr       */
+/*   Updated: 2017/10/25 11:53:29 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int				rb_force_enqueue(t_rb *rb, void (*del)(void*), void const *src);
 void			rb_free(t_rb *rb);
 void			*rb_front(t_rb const rb);
 int				rb_full(t_rb const rb);
+void			*rb_index(t_rb const rb, size_t const i);
 int				rb_new(size_t const capacity, size_t esize, t_rb *slot);
 int				rb_peek(t_rb const rb, void **item);
 int				rb_pop_back(t_rb *rb, void *item);

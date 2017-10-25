@@ -10,6 +10,7 @@ RB	:=	rb_back.c \
 		rb_free.c \
 		rb_front.c \
 		rb_full.c \
+		rb_index.c \
 		rb_new.c \
 		rb_peek.c \
 		rb_pop_back.c \
