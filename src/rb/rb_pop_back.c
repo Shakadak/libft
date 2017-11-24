@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/17 14:29:47 by npineau           #+#    #+#             */
-/*   Updated: 2017/10/19 13:04:59 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/24 08:51:21 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,17 @@ int			rb_pop_back(t_rb *rb, void *item)
 {
 	int	rv;
 
-	if ((rv = !rb_empty(*rb)))
+	if ((rv = rb->used != 0))
 	{
 		if (item != NULL)
 		{
 			mmemcpy(item, rb->tail, rb->esize);
 		}
-		rb->tail = (rb->tail == rb->b_start ? rb->b_end : rb->tail - rb->esize);
 		rb->used -= 1;
+		if (rb->used != 0)
+		{
+			rb->tail = (rb->tail == rb->b_start ? rb->b_end : rb->tail - rb->esize);
+		}
 	}
 	return (rv);
 }
