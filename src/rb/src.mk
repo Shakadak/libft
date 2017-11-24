@@ -13,6 +13,7 @@ RB	:=	rb_back.c \
 		rb_grow_push_back.c \
 		rb_grow_push_front.c \
 		rb_index.c \
+		rb_map.c \
 		rb_iter.c \
 		rb_new.c \
 		rb_peek.c \

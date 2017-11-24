@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:39:35 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/24 09:10:22 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/24 10:20:01 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,18 @@ int				rb_grow_push_back(t_rb *rb, void const *elem);
 int				rb_grow_push_front(t_rb *rb, void const *elem);
 void			*rb_index(t_rb rb, size_t i);
 void			rb_iter(t_rb rb, void (*f)(void *));
+t_rb			*rb_map(t_rb rb, size_t nsize, void (*f)(void *in, void *out),
+		t_rb *out);
 int				rb_new(size_t capacity, size_t esize, t_rb *slot);
 int				rb_peek(t_rb rb, void **item);
 int				rb_pop_back(t_rb *rb, void *item);
 int				rb_pop_front(t_rb *rb, void *item);
 int				rb_push_back(t_rb *rb, void const *src);
+int				rb_push_back_with(void (*cpy)(void const *in, void *out),
+		t_rb *rb, void const *src);
 int				rb_push_front(t_rb *rb, void const *src);
+int				rb_push_front_with(void (*cpy)(void const *in, void *out),
+		t_rb *rb, void const *src);
 t_rb			*rb_resize(t_rb *rb, size_t capacity);
 
 #endif
