@@ -30,10 +30,12 @@ STR	:=	ft_isx.c \
 		ft_strstr.c \
 		ft_strsub.c \
 		ft_strtrim.c \
+		mstpcpy.c \
+		mstr_join_with.c \
 		spanbreak.c \
 		split_when.c
 
 OBJ := $(OBJ) $(STR:.c=.o)
 
-$(DIROBJ)/%.o: $(DIRSRC)/str/%.c $(INC)
+$(DIROBJ)/%.o: $(DIRSRC)/str/%.c $(INC) $(DIRINC)/str.h
 	$(COMPIL)

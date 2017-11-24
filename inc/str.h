@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 16:29:59 by npineau           #+#    #+#             */
-/*   Updated: 2017/10/18 15:14:09 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/24 09:40:37 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,9 @@ size_t				ft_strnlen(size_t n, const char *str);
 t_pair				strspan(int (*p)(char), const char *str);
 t_pair				strbreak(int (*p)(char), const char *str);
 t_lst				*split_when(int (*p)(char), const char *str);
+
+char				*mstpcpy(char *out, const char *in);
+char				*mstr_join_with(char *glue, char **strs, size_t qty,
+		size_t *len_out);
 
 #endif
