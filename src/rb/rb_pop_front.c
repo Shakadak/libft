@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/17 14:22:09 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/24 08:31:34 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/24 09:43:03 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int			rb_pop_front(t_rb *rb, void *item)
 		rb->used -= 1;
 		if (rb->used != 0)
 		{
-			rb->head = (rb->head == rb->b_end ? rb->b_start : rb->head + rb->esize);
+			rb->head = (rb->head == rb->b_end ? rb->b_start
+					: rb->head + rb->esize);
 		}
 	}
 	return (rv);
