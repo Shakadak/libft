@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 09:24:15 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/24 09:38:08 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/27 08:22:38 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char			*mstr_join_with(char *glue, char **strs, size_t qty,
 		i += 1;
 	}
 	capacity += (i - 1) * mstrlen(glue);
-	str = malloc(sizeof(char) * capacity);
+	str = malloc(sizeof(char) * (capacity + 1));
 	*len_out = capacity;
 	i = 0;
 	end = str;
