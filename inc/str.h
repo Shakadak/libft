@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 16:29:59 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/24 09:40:37 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/27 14:31:58 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stddef.h>
 # include "msc.h"
 # include "lst.h"
+
+typedef char*		t_string;
 
 int					ft_isx(char *str, int (*is)(int));
 size_t				ft_array_len(char const *const *const array);
