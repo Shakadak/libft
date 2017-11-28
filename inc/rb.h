@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:39:35 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/28 13:13:39 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/28 14:39:09 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,12 @@ int				rb_push_back_with(
 		void (*cpy)(void const *in, void *out, size_t size),
 		t_rb *rb, void const *src);
 int				rb_push_front(t_rb *rb, void const *src);
-int				rb_push_front_with(void (*cpy)(void const *in, void *out),
+int				rb_push_front_n(t_rb *rb, void const **src, size_t n);
+int				rb_push_front_n_with(
+		void (*cpy)(void const *in, void *out, size_t size),
+		t_rb *rb, void const **src, size_t n);
+int				rb_push_front_with(
+		void (*cpy)(void const *in, void *out, size_t size),
 		t_rb *rb, void const *src);
 t_rb			*rb_resize(t_rb *rb, size_t capacity);
 
