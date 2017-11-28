@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:39:35 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/24 10:20:01 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/28 13:13:39 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,12 @@ int				rb_peek(t_rb rb, void **item);
 int				rb_pop_back(t_rb *rb, void *item);
 int				rb_pop_front(t_rb *rb, void *item);
 int				rb_push_back(t_rb *rb, void const *src);
-int				rb_push_back_with(void (*cpy)(void const *in, void *out),
+int				rb_push_back_n(t_rb *rb, void const **src, size_t n);
+int				rb_push_back_n_with(
+		void (*cpy)(void const *in, void *out, size_t size),
+		t_rb *rb, void const **src, size_t n);
+int				rb_push_back_with(
+		void (*cpy)(void const *in, void *out, size_t size),
 		t_rb *rb, void const *src);
 int				rb_push_front(t_rb *rb, void const *src);
 int				rb_push_front_with(void (*cpy)(void const *in, void *out),

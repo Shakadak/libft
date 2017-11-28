@@ -6,13 +6,44 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/17 13:33:59 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/24 10:15:48 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/28 13:07:40 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/rb.h"
 
-static void	*mmemcpy(void *out, const void *in, size_t len)
+int			rb_push_back_n_with(
+		void (*cpy)(void const *in, void *out, size_t size),
+		t_rb *rb, void const **src, size_t n)
+{
+	int		rv;
+	size_t	i;
+
+	rv = 1;
+	i = 0;
+	if (i < n && (rv = rb->used < rb->capacity))
+	{
+		if (rb->used != 0)
+		{
+			rb->tail = (rb->tail == rb->b_end ?
+					rb->b_start :
+					rb->tail + rb->esize);
+		}
+		cpy(src[i], rb->tail, rb->esize);
+		rb->used += 1;
+		i += 1;
+	}
+	return (rv);
+}
+
+int			rb_push_back_with(
+		void (*cpy)(void const *in, void *out, size_t size),
+		t_rb *rb, void const *src)
+{
+	return (rb_push_back_n_with(cpy, rb, &src, 1));
+}
+
+static void	m_memcpy(void const *in, void *out, size_t len)
 {
 	const uint8_t	*source;
 	uint8_t			*destination;
@@ -26,42 +57,14 @@ static void	*mmemcpy(void *out, const void *in, size_t len)
 		destination[i] = source[i];
 		i += 1;
 	}
-	return (out);
+}
+
+int			rb_push_back_n(t_rb *rb, void const **src, size_t n)
+{
+	return (rb_push_back_n_with(m_memcpy, rb, src, n));
 }
 
 int			rb_push_back(t_rb *rb, void const *src)
 {
-	int	rv;
-
-	if ((rv = !rb_full(*rb)))
-	{
-		if (rb->used != 0)
-		{
-			rb->tail = (rb->tail == rb->b_end ?
-					rb->b_start :
-					rb->tail + rb->esize);
-		}
-		mmemcpy(rb->tail, src, rb->esize);
-		rb->used += 1;
-	}
-	return (rv);
-}
-
-int			rb_push_back_with(void (*cpy)(void const *in, void *out),
-		t_rb *rb, void const *src)
-{
-	int	rv;
-
-	if ((rv = !rb_full(*rb)))
-	{
-		if (rb->used != 0)
-		{
-			rb->tail = (rb->tail == rb->b_end ?
-					rb->b_start :
-					rb->tail + rb->esize);
-		}
-		cpy(src, rb->tail);
-		rb->used += 1;
-	}
-	return (rv);
+	return (rb_push_back_n_with(m_memcpy, rb, &src, 1));
 }
