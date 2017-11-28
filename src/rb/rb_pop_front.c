@@ -6,11 +6,35 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/17 14:22:09 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/24 09:43:03 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/28 15:37:45 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/rb.h"
+
+size_t		rb_pop_front_n_with(
+		void (*cpy)(void const *in, void *out, size_t size),
+		t_rb *rb, void **xs, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n && rb->used > 0)
+	{
+		if (xs != NULL)
+		{
+			cpy(rb->head, xs[i], rb->esize);
+		}
+		rb->used -= 1;
+		if (rb->used != 0)
+		{
+			rb->head = (rb->head == rb->b_end ? rb->b_start
+					: rb->head + rb->esize);
+		}
+		i += 1;
+	}
+	return i;
+}
 
 static void	*mmemcpy(void *out, const void *in, size_t len)
 {
@@ -29,7 +53,7 @@ static void	*mmemcpy(void *out, const void *in, size_t len)
 	return (out);
 }
 
-int			rb_pop_front(t_rb *rb, void *item)
+size_t		rb_pop_front(t_rb *rb, void *item)
 {
 	int	rv;
 
