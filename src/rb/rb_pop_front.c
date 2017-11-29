@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/17 14:22:09 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/28 15:37:45 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/29 07:47:14 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,14 @@ size_t		rb_pop_front_n_with(
 	return i;
 }
 
-static void	*mmemcpy(void *out, const void *in, size_t len)
+size_t 		rb_pop_front_with(
+		void (*cpy)(void const *in, void *out, size_t size),
+		t_rb *rb, void *xs)
+{
+	return (rb_pop_front_n_with(cpy, rb, &xs, 1));
+}
+
+static void	m_memcpy(void const *in, void *out, size_t len)
 {
 	const uint8_t	*source;
 	uint8_t			*destination;
@@ -50,25 +57,14 @@ static void	*mmemcpy(void *out, const void *in, size_t len)
 		destination[i] = source[i];
 		i += 1;
 	}
-	return (out);
 }
 
-size_t		rb_pop_front(t_rb *rb, void *item)
+size_t		rb_pop_front_n(t_rb *rb, void **xs, size_t n)
 {
-	int	rv;
+	return (rb_pop_front_n_with(m_memcpy, rb, xs, n));
+}
 
-	if ((rv = rb->used > 0))
-	{
-		if (item != NULL)
-		{
-			mmemcpy(item, rb->head, rb->esize);
-		}
-		rb->used -= 1;
-		if (rb->used != 0)
-		{
-			rb->head = (rb->head == rb->b_end ? rb->b_start
-					: rb->head + rb->esize);
-		}
-	}
-	return (rv);
+size_t		rb_pop_front(t_rb *rb, void *xs)
+{
+	return (rb_pop_front_n_with(m_memcpy, rb, &xs, 1));
 }
