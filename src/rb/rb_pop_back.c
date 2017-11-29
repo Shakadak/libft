@@ -6,37 +6,40 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/17 14:29:47 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/29 09:18:52 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/29 13:48:30 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/rb.h"
 
-size_t		rb_pop_back_n_with(t_rb_cpy cpy, t_rb *rb, void **xs, size_t n)
+size_t		rb_pop_back_n_with(t_rb_cpy cpy, t_rb *rb, void *xs, size_t n)
 {
 	size_t	i;
+	uint8_t	*proxy;
 
 	i = 0;
+	proxy = xs;
 	while (i < n && rb->used > 0)
 	{
 		if (xs != NULL)
 		{
-			cpy(rb->tail, xs[i], rb->esize);
+			cpy(rb->tail, proxy, rb->esize);
 		}
+		proxy += rb->esize;
 		rb->used -= 1;
+		i += 1;
 		if (rb->used != 0)
 		{
 			rb->tail = (rb->tail == rb->b_start ? rb->b_end
 					: rb->tail - rb->esize);
 		}
-		i += 1;
 	}
 	return (i);
 }
 
-size_t		rb_pop_back_with(t_rb_cpy cpy, t_rb *rb, void *xs)
+size_t		rb_pop_back_with(t_rb_cpy cpy, t_rb *rb, void *x)
 {
-	return (rb_pop_back_n_with(cpy, rb, (xs != NULL ? &xs : NULL), 1));
+	return (rb_pop_back_n_with(cpy, rb, (x != NULL ? x : NULL), 1));
 }
 
 static void	m_memcpy(void const *in, void *out, size_t len)
@@ -55,12 +58,12 @@ static void	m_memcpy(void const *in, void *out, size_t len)
 	}
 }
 
-size_t		rb_pop_back_n(t_rb *rb, void **xs, size_t n)
+size_t		rb_pop_back_n(t_rb *rb, void *xs, size_t n)
 {
 	return (rb_pop_back_n_with(m_memcpy, rb, xs, n));
 }
 
-size_t		rb_pop_back(t_rb *rb, void *xs)
+size_t		rb_pop_back(t_rb *rb, void *x)
 {
-	return (rb_pop_back_n_with(m_memcpy, rb, (xs != NULL ? &xs : NULL), 1));
+	return (rb_pop_back_n_with(m_memcpy, rb, (x != NULL ? x : NULL), 1));
 }

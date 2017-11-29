@@ -6,14 +6,14 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 12:29:14 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/29 09:16:25 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/29 13:33:42 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/rb.h"
 
 size_t	rb_grow_push_front_n_with
-	(t_rb_cpy cpy, t_rb *rb, void const **xs, size_t n)
+	(t_rb_cpy cpy, t_rb *rb, void const *xs, size_t n)
 {
 	if (n > rb->capacity - rb->used)
 	{
@@ -29,10 +29,10 @@ size_t	rb_grow_push_front_n_with
 size_t	rb_grow_push_front_with
 	(t_rb_cpy cpy, t_rb *rb, void const *x)
 {
-	return (rb_grow_push_front_n_with(cpy, rb, &x, 1));
+	return (rb_grow_push_front_n_with(cpy, rb, x, 1));
 }
 
-size_t	rb_grow_push_front_n(t_rb *rb, void const **xs, size_t n)
+size_t	rb_grow_push_front_n(t_rb *rb, void const *xs, size_t n)
 {
 	if (n > rb->capacity - rb->used)
 	{
@@ -46,5 +46,5 @@ size_t	rb_grow_push_front_n(t_rb *rb, void const **xs, size_t n)
 
 size_t	rb_grow_push_front(t_rb *rb, void const *x)
 {
-	return (rb_grow_push_front_n(rb, &x, 1));
+	return (rb_grow_push_front_n(rb, x, 1));
 }

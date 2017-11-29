@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:39:35 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/29 11:08:50 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/29 13:58:07 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,22 @@ void			*rb_front(t_rb rb);
 int				rb_full(t_rb rb);
 
 size_t			rb_grow_push_back(t_rb *rb, void const *x);
-size_t			rb_grow_push_back_n(t_rb *rb, void const **xs, size_t n);
+size_t			rb_grow_push_back_n(t_rb *rb, void const *xs, size_t n);
 size_t			rb_grow_push_back_n_with
-				(t_rb_cpy cpy, t_rb *rb, void const **xs, size_t n);
+				(t_rb_cpy cpy, t_rb *rb, void const *xs, size_t n);
 size_t			rb_grow_push_back_with
 				(t_rb_cpy cpy, t_rb *rb, void const *x);
 
 size_t			rb_grow_push_front(t_rb *rb, void const *x);
-size_t			rb_grow_push_front_n(t_rb *rb, void const **xs, size_t n);
+size_t			rb_grow_push_front_n(t_rb *rb, void const *xs, size_t n);
 size_t			rb_grow_push_front_n_with
-				(t_rb_cpy cpy, t_rb *rb, void const **xs, size_t n);
+				(t_rb_cpy cpy, t_rb *rb, void const *xs, size_t n);
 size_t			rb_grow_push_front_with
 				(t_rb_cpy cpy, t_rb *rb, void const *x);
 
 void			*rb_index(t_rb rb, size_t i);
-ssize_t			rb_elem_index(t_rb rb, int (*equ)(void *x, void *elem), void *elem);
+ssize_t			rb_elem_index
+				(t_rb rb, int (*equ)(void *x, void *elem), void *elem);
 ssize_t			rb_find_index(t_rb rb, int (*check)(void *x));
 
 void			rb_iter(t_rb rb, void (*f)(void *));
@@ -67,30 +68,30 @@ t_rb			rb_new(size_t capacity, size_t esize, t_rb *slot);
 int				rb_peek(t_rb rb, void **item);
 
 size_t			rb_pop_back(t_rb *rb, void *item);
-size_t			rb_pop_back_n(t_rb *rb, void **xs, size_t n);
+size_t			rb_pop_back_n(t_rb *rb, void *xs, size_t n);
 size_t			rb_pop_back_n_with
-				(t_rb_cpy cpy, t_rb *rb, void **xs, size_t n);
+				(t_rb_cpy cpy, t_rb *rb, void *xs, size_t n);
 size_t			rb_pop_back_with
 				(t_rb_cpy cpy, t_rb *rb, void *x);
 
 size_t			rb_pop_front(t_rb *rb, void *item);
-size_t			rb_pop_front_n(t_rb *rb, void **xs, size_t n);
+size_t			rb_pop_front_n(t_rb *rb, void *xs, size_t n);
 size_t			rb_pop_front_n_with
-				(t_rb_cpy cpy, t_rb *rb, void **xs, size_t n);
+				(t_rb_cpy cpy, t_rb *rb, void *xs, size_t n);
 size_t			rb_pop_front_with
 				(t_rb_cpy cpy, t_rb *rb, void *x);
 
 size_t			rb_push_back(t_rb *rb, void const *x);
-size_t			rb_push_back_n(t_rb *rb, void const **xs, size_t n);
+size_t			rb_push_back_n(t_rb *rb, void const *xs, size_t n);
 size_t			rb_push_back_n_with
-				(t_rb_cpy cpy, t_rb *rb, void const **xs, size_t n);
+				(t_rb_cpy cpy, t_rb *rb, void const *xs, size_t n);
 size_t			rb_push_back_with
 				(t_rb_cpy cpy, t_rb *rb, void const *x);
 
 size_t			rb_push_front(t_rb *rb, void const *x);
-size_t			rb_push_front_n(t_rb *rb, void const **xs, size_t n);
+size_t			rb_push_front_n(t_rb *rb, void const *xs, size_t n);
 size_t			rb_push_front_n_with
-				(t_rb_cpy cpy, t_rb *rb, void const **xs, size_t n);
+				(t_rb_cpy cpy, t_rb *rb, void const *xs, size_t n);
 size_t			rb_push_front_with
 				(t_rb_cpy cpy, t_rb *rb, void const *x);
 
