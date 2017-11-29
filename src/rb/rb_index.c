@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 11:35:54 by npineau           #+#    #+#             */
-/*   Updated: 2017/10/25 11:51:09 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/29 11:06:51 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,36 @@ void	*rb_index(t_rb const rb, size_t const i)
 		}
 	}
 	return (elem);
+}
+
+ssize_t	rb_elem_index(t_rb rb, int (*equ)(void *x, void *elem), void *elem)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < rb.used)
+	{
+		if (equ(rb.head, elem))
+			return (i);
+		rb.head = (rb.head == rb.b_end ? rb.b_start
+				: rb.head + rb.esize);
+		i += 1;
+	}
+	return (-1);
+}
+
+ssize_t	rb_find_index(t_rb rb, int (*check)(void *x))
+{
+	size_t	i;
+
+	i = 0;
+	while (i < rb.used)
+	{
+		if (check(rb.head))
+			return (i);
+		rb.head = (rb.head == rb.b_end ? rb.b_start
+				: rb.head + rb.esize);
+		i += 1;
+	}
+	return (-1);
 }

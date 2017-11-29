@@ -6,18 +6,19 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:41:31 by npineau           #+#    #+#             */
-/*   Updated: 2017/10/19 13:28:19 by mde-jesu         ###   ########.fr       */
+/*   Updated: 2017/11/29 10:09:05 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int	rb_new(size_t const capacity, size_t const esize, t_rb *slot)
+t_rb	rb_new(size_t const capacity, size_t const esize, t_rb *slot)
 {
-	int		rv;
+	t_rb	substitute;
 
-	rv = 0;
+	if (slot == NULL)
+		slot = &substitute;
 	slot->b_start = malloc(esize * capacity);
 	slot->used = 0;
 	if (slot->b_start != NULL)
@@ -28,11 +29,10 @@ int	rb_new(size_t const capacity, size_t const esize, t_rb *slot)
 		slot->capacity = capacity;
 		slot->esize = esize;
 		slot->b_end = slot->b_start + (capacity - 1) * esize;
-		rv = 1;
 	}
 	else
 	{
 		ft_bzero(slot, sizeof(t_rb));
 	}
-	return (rv);
+	return (*slot);
 }

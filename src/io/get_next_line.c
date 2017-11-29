@@ -6,68 +6,46 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/06 16:16:06 by npineau           #+#    #+#             */
-/*   Updated: 2014/05/06 13:20:19 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/29 12:24:56 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/libft.h"
-#include <unistd.h>
 #include <stdlib.h>
+#include "inc/io.h"
+#include "inc/rb.h"
 
-static int	malloc_more(char **buf, int size)
+static int	is_newline(void *c)
 {
-	int		i;
-	char	*tmp;
-
-	tmp = *buf;
-	*buf = malloc(sizeof(char) * (ft_strlen(tmp) + size + 1));
-	i = -1;
-	while (tmp[++i] != '\0')
-		(*buf)[i] = tmp[i];
-	(*buf)[i] = '\0';
-	free(tmp);
-	return (i);
+	return (*(char *)c == '\n');
 }
 
-static int	get_part(char **buf, char **line)
+ssize_t	get_next_line(int fd, t_str *line)
 {
-	char	*tmp;
-	int		i;
+	static t_rb	storage = { .b_start = NULL };
+	char		buffer[GNL_BUFF_SIZE];
+	ssize_t		i;
+	ssize_t		check;
 
-	i = 0;
-	tmp = *buf;
-	while (tmp[i] != '\0' && tmp[i] != '\n')
-		i++;
-	if (tmp[i] != '\n')
-		return (0);
-	tmp[i] = '\0';
-	*line = ft_strdup(*buf);
-	*buf = ft_strdup(*buf + i + 1);
-	free(tmp);
-	return (1);
-}
-
-int			get_next_line(int const fd, char **line)
-{
-	static char	*buf = NULL;
-	int			ret;
-	int			i;
-	static int	real = 1;
-
-	if (!real)
-		return (0);
-	if (buf == NULL)
-		buf = ft_strdup("");
-	if (get_part(&buf, line))
-		return (1);
-	i = malloc_more(&buf, BUFF_SIZE);
-	ret = read(fd, buf + i, BUFF_SIZE);
-	if (ret == -1)
-		return (-1);
-	buf[i + ret] = '\0';
-	if (ret != 0)
+	ft_putendl("[get_next_line] >>>");
+	if (storage.b_start == NULL)
+		rb_new(GNL_BUFF_SIZE, sizeof(char), &storage);
+	i = rb_find_index(storage, is_newline);
+	if (i == -1)
+	{
+		check = read(fd, buffer, GNL_BUFF_SIZE);
+		if (check <= 0) {
+			ft_putendl("[get_next_line] <<<");
+			return (check); }
+		rb_grow_push_back_n(&storage, (void const **)&buffer, check);
+		ft_putendl("[get_next_line] <<<");
 		return (get_next_line(fd, line));
-	*line = ft_strdup(buf);
-	free(buf);
-	return (real--);
+	}
+	else
+	{
+		*line = malloc(sizeof(char) * (i + 1));
+		rb_pop_front_n(&storage, (void **)line, i + 1);
+		*line[i] = '\0';
+		ft_putendl("[get_next_line] <<<");
+		return (1);
+	}
 }

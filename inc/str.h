@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 16:29:59 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/27 14:31:58 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/29 10:11:37 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "msc.h"
 # include "lst.h"
 
-typedef char*		t_string;
+typedef char*		t_str;
 
 int					ft_isx(char *str, int (*is)(int));
 size_t				ft_array_len(char const *const *const array);
@@ -49,7 +49,6 @@ char				*ft_strjoin(const char *s1, const char *s2);
 char				*ft_strtrim(const char *src);
 char				**ft_strsplit(char const *s, char c);
 char				**ft_strxsplit(char const *s, int (*is_x)(char));
-int					get_next_line(int fd, char **src);
 
 char				*ft_strndup(size_t n, const char *src);
 size_t				ft_strnlen(size_t n, const char *str);
