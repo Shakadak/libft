@@ -6,15 +6,14 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/17 13:33:59 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/28 15:28:13 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/29 09:17:22 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/rb.h"
 
-size_t		rb_push_back_n_with(
-		void (*cpy)(void const *in, void *out, size_t size),
-		t_rb *rb, void const **src, size_t n)
+size_t		rb_push_back_n_with
+	(t_rb_cpy cpy, t_rb *rb, void const **xs, size_t n)
 {
 	size_t	i;
 
@@ -27,18 +26,16 @@ size_t		rb_push_back_n_with(
 					rb->b_start :
 					rb->tail + rb->esize);
 		}
-		cpy(src[i], rb->tail, rb->esize);
+		cpy(xs[i], rb->tail, rb->esize);
 		rb->used += 1;
 		i += 1;
 	}
 	return (i);
 }
 
-size_t		rb_push_back_with(
-		void (*cpy)(void const *in, void *out, size_t size),
-		t_rb *rb, void const *src)
+size_t		rb_push_back_with(t_rb_cpy cpy, t_rb *rb, void const *x)
 {
-	return (rb_push_back_n_with(cpy, rb, &src, 1));
+	return (rb_push_back_n_with(cpy, rb, &x, 1));
 }
 
 static void	m_memcpy(void const *in, void *out, size_t len)
@@ -57,12 +54,12 @@ static void	m_memcpy(void const *in, void *out, size_t len)
 	}
 }
 
-size_t		rb_push_back_n(t_rb *rb, void const **src, size_t n)
+size_t		rb_push_back_n(t_rb *rb, void const **xs, size_t n)
 {
-	return (rb_push_back_n_with(m_memcpy, rb, src, n));
+	return (rb_push_back_n_with(m_memcpy, rb, xs, n));
 }
 
-size_t		rb_push_back(t_rb *rb, void const *src)
+size_t		rb_push_back(t_rb *rb, void const *x)
 {
-	return (rb_push_back_n_with(m_memcpy, rb, &src, 1));
+	return (rb_push_back_n_with(m_memcpy, rb, &x, 1));
 }

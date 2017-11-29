@@ -6,15 +6,13 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/17 14:22:09 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/29 08:13:21 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/29 09:18:11 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/rb.h"
 
-size_t		rb_pop_front_n_with(
-		void (*cpy)(void const *in, void *out, size_t size),
-		t_rb *rb, void **xs, size_t n)
+size_t		rb_pop_front_n_with(t_rb_cpy cpy, t_rb *rb, void **xs, size_t n)
 {
 	size_t	i;
 
@@ -36,9 +34,7 @@ size_t		rb_pop_front_n_with(
 	return (i);
 }
 
-size_t		rb_pop_front_with(
-		void (*cpy)(void const *in, void *out, size_t size),
-		t_rb *rb, void *xs)
+size_t		rb_pop_front_with(t_rb_cpy cpy, t_rb *rb, void *xs)
 {
 	return (rb_pop_front_n_with(cpy, rb, (xs != NULL ? &xs : NULL), 1));
 }
