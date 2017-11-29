@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/17 14:22:09 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/29 07:47:14 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/29 08:13:21 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ size_t		rb_pop_front_n_with(
 		}
 		i += 1;
 	}
-	return i;
+	return (i);
 }
 
-size_t 		rb_pop_front_with(
+size_t		rb_pop_front_with(
 		void (*cpy)(void const *in, void *out, size_t size),
 		t_rb *rb, void *xs)
 {
-	return (rb_pop_front_n_with(cpy, rb, &xs, 1));
+	return (rb_pop_front_n_with(cpy, rb, (xs != NULL ? &xs : NULL), 1));
 }
 
 static void	m_memcpy(void const *in, void *out, size_t len)
@@ -66,5 +66,5 @@ size_t		rb_pop_front_n(t_rb *rb, void **xs, size_t n)
 
 size_t		rb_pop_front(t_rb *rb, void *xs)
 {
-	return (rb_pop_front_n_with(m_memcpy, rb, &xs, 1));
+	return (rb_pop_front_n_with(m_memcpy, rb, (xs != NULL ? &xs : NULL), 1));
 }
