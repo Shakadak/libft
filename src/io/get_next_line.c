@@ -6,13 +6,14 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/06 16:16:06 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/29 15:30:58 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/30 07:47:24 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "inc/io.h"
 #include "inc/rb.h"
+#include "inc/mem.h"
 
 static int	is_newline(void *c)
 {
@@ -33,16 +34,16 @@ ssize_t		get_next_line(int fd, t_str *line)
 	{
 		check = read(fd, buffer, GNL_BUFF_SIZE);
 		if (check <= 0)
+		{
+			free(storage.b_start);
+			storage.b_start = NULL;
 			return (check);
+		}
 		rb_grow_push_back_n(&storage, buffer, check);
 		return (get_next_line(fd, line));
 	}
-	else
-	{
-		*line = malloc(sizeof(char) * (i + 1));
-		rb_pop_front_n(&storage, *line, i + 1);
-		(*line)[i] = '\0';
-		ft_putendl(*line);
-		return (1);
-	}
+	*line = malloc(sizeof(char) * (i + 1));
+	rb_pop_front_n(&storage, *line, i + 1);
+	(*line)[i] = '\0';
+	return (1);
 }
