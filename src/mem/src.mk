@@ -8,7 +8,8 @@ MEM := ft_freesplit.c \
 	ft_memdel.c \
 	ft_memdup.c \
 	ft_memmove.c \
-	ft_memset.c
+	ft_memset.c\
+	mbzero.c
 
 OBJ := $(OBJ) $(MEM:.c=.o)
 

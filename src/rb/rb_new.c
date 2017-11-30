@@ -6,12 +6,13 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:41:31 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/29 10:09:05 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/30 08:33:10 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "inc/mem.h"
+#include "inc/rb.h"
 
 t_rb	rb_new(size_t const capacity, size_t const esize, t_rb *slot)
 {
@@ -19,6 +20,8 @@ t_rb	rb_new(size_t const capacity, size_t const esize, t_rb *slot)
 
 	if (slot == NULL)
 		slot = &substitute;
+	if (capacity == 0 || esize == 0)
+		return (*(t_rb *)mbzero(sizeof(t_rb), slot));
 	slot->b_start = malloc(esize * capacity);
 	slot->used = 0;
 	if (slot->b_start != NULL)
