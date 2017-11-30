@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:41:31 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/30 08:33:10 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/30 10:47:15 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,13 @@ t_rb	rb_new(size_t const capacity, size_t const esize, t_rb *slot)
 		ft_bzero(slot, sizeof(t_rb));
 	}
 	return (*slot);
+}
+
+t_rb	rb_from(size_t capacity, size_t esize, void *xs)
+{
+	t_rb	new;
+
+	rb_new(capacity, esize, &new);
+	rb_push_back_n(&new, xs, capacity);
+	return (new);
 }
