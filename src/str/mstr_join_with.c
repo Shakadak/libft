@@ -6,13 +6,13 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 09:24:15 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/27 08:22:38 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/30 09:38:10 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static size_t	mstrlen(char *str)
+static size_t	m_strlen(char *str)
 {
 	size_t	len;
 
@@ -24,7 +24,7 @@ static size_t	mstrlen(char *str)
 	return (len);
 }
 
-static char		*mstpcpy(char *out, const char *in)
+static char		*m_stpcpy(char *out, const char *in)
 {
 	size_t	i;
 
@@ -50,20 +50,20 @@ char			*mstr_join_with(char *glue, char **strs, size_t qty,
 	capacity = 0;
 	while (i < qty)
 	{
-		capacity += mstrlen(strs[i]);
+		capacity += m_strlen(strs[i]);
 		i += 1;
 	}
-	capacity += (i - 1) * mstrlen(glue);
+	capacity += (i - 1) * m_strlen(glue);
 	str = malloc(sizeof(char) * (capacity + 1));
 	*len_out = capacity;
 	i = 0;
 	end = str;
 	while (i < qty)
 	{
-		end = mstpcpy(end, strs[i]);
+		end = m_stpcpy(end, strs[i]);
 		i += 1;
 		if (i < qty)
-			end = mstpcpy(end, glue);
+			end = m_stpcpy(end, glue);
 	}
 	return (str);
 }
