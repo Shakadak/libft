@@ -32,6 +32,7 @@ STR	:=	ft_isx.c \
 		ft_strtrim.c \
 		mstpcpy.c \
 		mstr_join_with.c \
+		mstr_split_with.c\
 		spanbreak.c \
 		split_when.c
 

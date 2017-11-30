@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 16:29:59 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/29 10:11:37 by npineau          ###   ########.fr       */
+/*   Updated: 2017/11/30 10:34:09 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include "msc.h"
 # include "lst.h"
+# include "inc/rb.h"
 
 typedef char*		t_str;
 
@@ -59,5 +60,6 @@ t_lst				*split_when(int (*p)(char), const char *str);
 char				*mstpcpy(char *out, const char *in);
 char				*mstr_join_with(char *glue, char **strs, size_t qty,
 		size_t *len_out);
+t_rb				mstr_split_with(int (*is_sep)(char), t_str str);
 
 #endif
