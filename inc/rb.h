@@ -6,7 +6,7 @@
 /*   By: npineau <npineau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 09:39:35 by npineau           #+#    #+#             */
-/*   Updated: 2017/11/30 10:49:11 by npineau          ###   ########.fr       */
+/*   Updated: 2017/12/01 09:11:50 by npineau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct	s_rb
 }				t_rb;
 
 typedef void	(*t_rb_cpy)(void const *in, void *out, size_t size);
+typedef void	(*t_rb_iter)(void *);
 
 void			*rb_back(t_rb rb);
 int				rb_dequeue(t_rb *rb, void **item);
@@ -61,11 +62,13 @@ ssize_t			rb_elem_index
 				(t_rb rb, int (*equ)(void *x, void *elem), void *elem);
 ssize_t			rb_find_index(t_rb rb, int (*check)(void *x));
 
-void			rb_iter(t_rb rb, void (*f)(void *));
+void			rb_iter(t_rb rb, t_rb_iter f);
 t_rb			*rb_map(t_rb rb, size_t nsize, void (*f)(void *in, void *out),
 		t_rb *out);
 t_rb			rb_new(size_t capacity, size_t esize, t_rb *slot);
 t_rb			rb_from(size_t capacity, size_t esize, void *xs);
+t_rb			rb_from_with
+				(t_rb_cpy cpy, size_t capacity, size_t esize, void *xs);
 
 int				rb_peek(t_rb rb, void **item);
 
